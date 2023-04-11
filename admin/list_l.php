@@ -26,7 +26,7 @@ $query=mysqli_query($condb,"SELECT COUNT(p_id) FROM `tbl_product`");
 $row = mysqli_fetch_row($query);
 
 $rows = $row[0];
-$page_rows = 18;  //จำนวนข้อมูลที่ต้องการให้แสดงใน 1 หน้า  ตย. 5 record / หน้า 
+$page_rows = 20;  //จำนวนข้อมูลที่ต้องการให้แสดงใน 1 หน้า  ตย. 5 record / หน้า 
 $last = ceil($rows/$page_rows);
 if($last < 1){
 $last = 1;
@@ -152,7 +152,7 @@ function barcode($code){
 
                             <?php while($rs_prd = mysqli_fetch_array($nquery)){ ?> 
 
-                            <div class="col-md-2">
+                            <div class="col-md-3">
                              
                             <div class="card" style="">
                               <img width="100%" src="../p_img/<?php echo $rs_prd['p_img'] ;?>" class="card-img-top" alt="<?php echo $rs_prd['p_name'] ;?>" title="<?php echo $rs_prd['p_name'] ;?>">
