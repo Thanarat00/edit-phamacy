@@ -47,7 +47,7 @@ $query=mysqli_query($condb,"SELECT COUNT(p_id) FROM `tbl_product` WHERE t_id = $
 $row = mysqli_fetch_row($query);
 
 $rows = $row[0];
-$page_rows = 6;  //จำนวนข้อมูลที่ต้องการให้แสดงใน 1 หน้า  ตย. 5 record / หน้า 
+$page_rows = 18;  //จำนวนข้อมูลที่ต้องการให้แสดงใน 1 หน้า  ตย. 5 record / หน้า 
 $last = ceil($rows/$page_rows);
 if($last < 1){
 $last = 1;
@@ -130,7 +130,6 @@ function barcode($code){
 <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
-        <h1>ขายสินค้า</h1>
       </div><!-- /.container-fluid -->
     </section>
 
@@ -151,7 +150,10 @@ function barcode($code){
 
                   <div class="row">
 
-                    <div class="col-md-7">
+                  <div class="col-md-12">
+                      <?php include('cart_a_2.php');?>
+                    </div>
+                    <div class="col-md-12">
                       <form action="l_a.php"  method="GET" >
                  <div class="input-group">
                     <input type="text" name="p_id" class="form-control" placeholder="Scan Barcode" autofocus >
@@ -174,7 +176,7 @@ function barcode($code){
 
                             <?php while($rs_prd = mysqli_fetch_array($nquery)){ ?> 
 
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                              
                             <div class="card" style="">
                               <img width="100%" src="../p_img/<?php echo $rs_prd['p_img'] ;?>" class="card-img-top" alt="<?php echo $rs_prd['p_name'] ;?>" title="<?php echo $rs_prd['p_name'] ;?>">
@@ -215,9 +217,6 @@ function barcode($code){
                     </div>
 
 
-                    <div class="col-md-5">
-                      <?php include('cart_a_2.php');?>
-                    </div>
 
                 </div>
         
