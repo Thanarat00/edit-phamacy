@@ -27,8 +27,11 @@
     /*background-color: #222;*/
     background-image: url("1.jpg");
     background-repeat: no-repeat;
-
-     background-size: 100% ;
+    -webkit-background-size: cover;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+ 
   }
   .login-card-body{
     /*background-color: #222;
