@@ -51,7 +51,7 @@ $rs_t= mysqli_query($condb, $query_t);
                    <li class="nav-item dropdown">
                        <a class="nav-link dropdown-toggle text-light navbar-brand" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                            aria-haspopup="true" aria-expanded="false">
-                           <b>สินค้า</b>
+                           สินค้า
                        </a>
                        <ul class="dropdown-menu bg-dark  " aria-labelledby="navbarDropdown">
                             <!--  <li><a class="dropdown-item" href="#">BRAND-1</a></li>
@@ -196,14 +196,14 @@ $rs_t= mysqli_query($condb, $query_t);
                 
             
             </div>
-            <ul class="navbar-nav">
+            <ul class="navbar-nav ">
             <?php if ($c_id == ''){ ?>
               &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;
               &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;
               &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;
               &nbsp;  &nbsp;  
                 <li class="nav-item">
-                  <a class="navbar-brand sm-9 text-light" href="login.php"><b>เข้าสู่ระบบ</b></a>
+                  <a class="nav-link  text-light navbar-brand" href="login.php">เข้าสู่ระบบ</a>
                 </li>
 
               <?php } else {?>
@@ -212,7 +212,7 @@ $rs_t= mysqli_query($condb, $query_t);
                 <ul class="navbar-nav">
                   <li class="nav-item dropdown">
                     <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                    || <?php echo $c_img.$c_name.$c_surname; ?> ||
+                     <?php echo $c_name." &nbsp;     ".$c_surname; ?> 
                     </button>
                     <ul class="dropdown-menu dropdown-menu-dark">
                       <li><a class="dropdown-item" href="user2.php">ประวัติ</a></li>
