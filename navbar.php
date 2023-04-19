@@ -49,9 +49,9 @@ $rs_t= mysqli_query($condb, $query_t);
                    
 
                    <li class="nav-item dropdown">
-                       <a class="nav-link dropdown-toggle text-light navbar-brand" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                       <a class="nav-link dropdown-toggle text-light " href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                            aria-haspopup="true" aria-expanded="false">
-                           สินค้า
+                            หมวดหมู่
                        </a>
                        <ul class="dropdown-menu bg-dark  " aria-labelledby="navbarDropdown">
                             <!--  <li><a class="dropdown-item" href="#">BRAND-1</a></li>
@@ -196,14 +196,17 @@ $rs_t= mysqli_query($condb, $query_t);
                 
             
             </div>
-            <ul class="navbar-nav ">
+            <ul class="navbar-nav  ">
             <?php if ($c_id == ''){ ?>
               &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;
               &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;
               &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;
               &nbsp;  &nbsp;  
+
                 <li class="nav-item">
-                  <a class="nav-link  text-light navbar-brand" href="login.php">เข้าสู่ระบบ</a>
+                <div class="collapse navbar-collapse">
+                  <a class="nav-link text-light" href="login.php">เข้าสู่ระบบ</a>
+                </div>
                 </li>
 
               <?php } else {?>
