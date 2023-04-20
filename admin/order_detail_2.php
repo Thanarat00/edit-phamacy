@@ -29,12 +29,12 @@ $order_id = mysqli_real_escape_string($condb,$_GET['order_id']);
 
 <center>
 	<h4>รายการสั่งซื้อ<br>
-		Order Id : <?php echo $order_id; ?> </br>
-		ว/ด/ป : <?php echo date('d/m/y',strtotime($rowmember['order_date'])); ?></br>
+		คำสั่งซื้อที่: <?php echo $order_id; ?> </br>
+		วันที่ : <?php echo substr($rowmember['order_date'],8,2)." ". $thaimonth[substr($rowmember['order_date'],5,2)-1]." ".substr(substr($rowmember['order_date'],0,4)+543,0,4); ?></br>
 	ผู้ทำรายการขาย : <?php echo $rowmember['mem_name']; ?> <br>
 	ชื่อผู้ซื้อ : <?php echo $rowmember['c_name']; ?> 
 	<br/>สถานะ :
-	<?php include('admin/mystatus.php');?>
+	<?php include('mystatus.php');?>
 
 	</h4>
 </center>
@@ -62,7 +62,7 @@ $order_id = mysqli_real_escape_string($condb,$_GET['order_id']);
 		$total += $rspay['total']; //ราคารวม ทั้ง ตระกร้า
 		echo "<tr>";
 		echo "<td>" . @$i+=1 . "</td>";
-		echo "<td>"."<img src='../p_img/".$rspay['p_img']."' width='100%'>"."</td>";
+		echo "<td>"."<img src='p_img/".$rspay['p_img']."' width='100%'>"."</td>";
 		echo "<td>" . $rspay["p_name"] . "</td>";
 		echo "<td align='right'>" .number_format($rspay["p_price"],2) . "</td>";
 		echo "<td align='right'>"; 
