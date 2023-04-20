@@ -47,7 +47,7 @@ $rs_t= mysqli_query($condb, $query_t);
            
            <ul class="navbar-nav mr-auto">
                    
-
+           <div class="container">
                    <li class="nav-item dropdown">
                        <a class="nav-link dropdown-toggle text-light dropdown-header " href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                            aria-haspopup="true" aria-expanded="false">
@@ -172,7 +172,7 @@ $rs_t= mysqli_query($condb, $query_t);
              </div>
 
 
-        <div class="container">
+   
               <?php if ($c_id == ''){ ?>
               <form action="index_sl.php" method="POST" class="mx-2 my-auto d-inline w-100">
                  <div class="input-group">
