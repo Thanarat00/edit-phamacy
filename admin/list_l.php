@@ -1,6 +1,3 @@
-<?php 
-$menu = "sale";
-?>
 
 
 <?php include("header.php"); ?>

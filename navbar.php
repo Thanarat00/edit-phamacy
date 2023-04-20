@@ -49,7 +49,7 @@ $rs_t= mysqli_query($condb, $query_t);
                    
 
                    <li class="nav-item dropdown">
-                       <a class="nav-link dropdown-toggle text-light " href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                       <a class="nav-link dropdown-toggle text-light dropdown-header " href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                            aria-haspopup="true" aria-expanded="false">
                             หมวดหมู่
                        </a>
@@ -75,7 +75,7 @@ $rs_t= mysqli_query($condb, $query_t);
                             ?>
     
                             
-                            <li class="nav-item dropdown">
+                            <li class="nav-item dropdown dropdown-header">
                                 <a class="dropdown-item dropdown-toggle text-light" id="navbarDropdown1" role="button" data-toggle="dropdown"
                                     aria-haspopup="true" aria-expanded="false">
                                     <?php echo $rs_t['t_name']; ?>
@@ -83,7 +83,7 @@ $rs_t= mysqli_query($condb, $query_t);
                                 </a>
 
                                 <?php if ($rs_p_rows>0){?>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                                <ul class="dropdown-menu bg-dark " aria-labelledby="navbarDropdown1">
                                   
                                 
                                   <?php foreach ($rs_p as $rs_p ) {
@@ -94,10 +94,10 @@ $rs_t= mysqli_query($condb, $query_t);
  
                               
 
-                                    <li class="nav-item dropdown">
+                                    <li class="nav-item dropdown dropdown-header">
                                      
 
-                                        <a class="dropdown-item" href="l.php?t_id=<?php echo $rs_t['t_id']; ?>&b_id=<?php echo $rs_p['b_id']; ?>" id="navbarDropdown2" role="button" 
+                                        <a class="dropdown-item text-light" href="l.php?t_id=<?php echo $rs_t['t_id']; ?>&b_id=<?php echo $rs_p['b_id']; ?>" id="navbarDropdown2" role="button" 
                                              >
                                         
                                             <?php echo $rs_p['b_name']; ?>
@@ -202,13 +202,12 @@ $rs_t= mysqli_query($condb, $query_t);
               &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;
               &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;
               &nbsp;  &nbsp;  
-
-                <li class="nav-item">
-                <div class="collapse navbar-collapse">
-                  <a class="nav-link text-light" href="login.php">เข้าสู่ระบบ</a>
-                </div>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <li class="nav-item ">
+                  <a class=" nav-link text-light dropdown-header  " href="login.php">เข้าสู่ระบบ</a>
+         
                 </li>
-
+              </div>
               <?php } else {?>
                 <li class="nav-item">
               <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
