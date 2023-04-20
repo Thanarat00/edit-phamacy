@@ -125,12 +125,13 @@ function barcode($code){
 
                   
 
-                    <div class="col-md-12">
-                      <?php include('cart_a_2.php');?>
-                    </div>
+             
 
                     <div class="col-md-12">
                       <form action="list_l.php"  method="GET" >
+                      <div class="col-md-12">
+                      <?php include('cart_a_2.php');?>
+                    </div>   
                  <div class="input-group">
                     <input type="text" name="p_id" class="form-control" placeholder="Scan Barcode" autofocus >
                      <!-- <span class="input-group-append">
