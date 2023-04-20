@@ -118,7 +118,7 @@ include "../barcode/src/BarcodeGeneratorHTML.php";
 function barcode($code){
   
   $generator = new Picqer\Barcode\BarcodeGeneratorHTML();
-  $border = 2;//กำหนดความหน้าของเส้น Barcode
+  $border = 1.5;//กำหนดความหน้าของเส้น Barcode
   $height = 40;//กำหนดความสูงของ Barcode
 
   return $generator->getBarcode($code , $generator::TYPE_CODE_128,$border,$height);
@@ -182,7 +182,7 @@ function barcode($code){
                               <img width="100%" src="../p_img/<?php echo $rs_prd['p_img'] ;?>" class="card-img-top" alt="<?php echo $rs_prd['p_name'] ;?>" title="<?php echo $rs_prd['p_name'] ;?>">
                               <div class="card-body">
                                  <h5 class="card-title"><?php echo $rs_prd['p_name']; ?></h5>
-                                <p class="card-text"><?php echo number_format($rs_prd['p_price'],2); ?> Baht</p>
+                                <p class="card-text"><?php echo number_format($rs_prd['p_price']); ?> บาท</p>
 
 
                                 <?php if($rs_prd['p_qty'] > 0){ ?>
