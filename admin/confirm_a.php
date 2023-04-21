@@ -22,7 +22,6 @@ $menu = "sale";
 <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
-        <h1>รายการสินค้าที่สั่งซื้อทั้งหมด</h1>
       </div><!-- /.container-fluid -->
     </section>
 
@@ -44,7 +43,7 @@ $menu = "sale";
 
                 	<div class="container">
 <div class="row">
-<div class="col-12 col-sm-12 col-md-12">
+<div class="col-12 col-sm-12=- col-md-12">
 <form id="frmcart" name="frmcart" method="post" action="saveorder_a.php">
 <?php if ($_id != ''){?>
 
@@ -61,7 +60,7 @@ $menu = "sale";
       <td width="40%" align="center">สินค้า</td>
       <td width="10%" align="center">ราคา</td>
       <td width="10%" align="center">จำนวน</td>
-      <td width="15%" align="center">รวม(บาท)</td>
+      <td width="15%" align="center">รวม (บาท)</td>
      
     </tr>
 <?php

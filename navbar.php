@@ -213,13 +213,13 @@ $rs_t= mysqli_query($condb, $query_t);
               <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
                 <ul class="navbar-nav">
                   <li class="nav-item dropdown">
-                    <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    <button class="btn btn-dark dropdown-toggle dropdown-header text-light" data-bs-toggle="dropdown" aria-expanded="false">
                      <?php echo $c_name." &nbsp;     ".$c_surname; ?> 
                     </button>
                     <ul class="dropdown-menu dropdown-menu-dark">
-                      <li><a class="dropdown-item" href="user2.php">ประวัติ</a></li>
-                      <li><a class="dropdown-item" href="editprofile.php">แก้ไขข้อมูลส่วนตัว</a></li>
-                      <li><a class="dropdown-item" href="logout.php">ออกจากระบบ</a></li>
+                      <li><a class="dropdown-item  dropdown-header " href="user2.php">ประวัติ</a></li>
+                      <li><a class="dropdown-item  dropdown-header " href="editprofile.php">แก้ไขข้อมูลส่วนตัว</a></li>
+                      <li><a class="dropdown-item  dropdown-header " href="logout.php">ออกจากระบบ</a></li>
                     </ul>
                   </li>
                 </ul>

@@ -16,20 +16,8 @@ $row=mysqli_fetch_array($rs_member);
 
 
 ?>
-<script src="http://code.jquery.com/jquery-latest.js"></script>
-      <script type="text/javascript">
-        function readURL(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
 
-                reader.onload = function (e) {
-                    $('#blah').attr('src', e.target.result);
-                }
 
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
-</script>
 
 
 
@@ -44,7 +32,7 @@ $row=mysqli_fetch_array($rs_member);
     <section class="content">
 
     <div class="card card-gray">
-            <div class="card-header ">
+            <div class="card-header col-md-8 container">
               <h3 class="card-title">ข้อมูลส่วนตัว</h3>
             </div>
             <br>
@@ -52,7 +40,7 @@ $row=mysqli_fetch_array($rs_member);
 
               <div class="row">
                  
-                 <div class="col-md-12">
+                 <div class="col-md-6 container">
 
 
                  <form action="admin/cus_db2.php" method="POST" enctype="multipart/form-data">
@@ -172,9 +160,7 @@ $row=mysqli_fetch_array($rs_member);
 
 
             </div>
-            <div class="card-footer">
-                     
-            </div>
+
 
 
               

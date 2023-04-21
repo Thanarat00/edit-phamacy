@@ -102,15 +102,15 @@ $rs_supplier = mysqli_query($condb, $query_supplier);
   <thead>
     <tr class="danger">
       <th width="1%"><center>ลำดับ</center></th>
-      <th width="10%">รูปภาพ</th>
+      <th width="10%"><center>รูปภาพ</center></th>
       
-      <th width="20%">ชื่อ</th>
-      <th width="10%">ราคา</th>
-      <th width="10%">จำนวน</th>
-      <th width="20%">วันผลิต/หมดอายุ</th>
+      <th width="20%"><center>ชื่อ</center></th>
+      <th width="10%"><center>ราคา</center></th>
+      <th width="10%"><center>จำนวน</center></th>
+      <th width="20%"><center>วันผลิต/หมดอายุ</center></th>
       
-      <th width="10%">แก้ไข</th>
-      <th width="10%">ลบ</th>
+      <th width="10%"><center>แก้ไข</center></th>
+      <th width="10%"><center>ลบ</center></th>
       
     </tr>
   </thead>

@@ -48,10 +48,10 @@ reader.readAsDataURL(input.files[0]);
               <thead>
                 <tr class="danger">
                   <th width="1%"><center>ลำดับ</center></th>
-                  <th width="10%">ชื่อผู้ผลิต</th>
+                  <th width="10%"><center>ชื่อผู้ผลิต</center></th>
                   
-                  <th width="5%">แก้ไข</th>
-                  <th width="5%">ลบ</th>
+                  <th width="5%"><center>แก้ไข</center></th>
+                  <th width="5%"><center>ลบ</center></th>
                   
                 </tr>
               </thead>

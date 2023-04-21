@@ -70,7 +70,7 @@ $rs_my_order = mysqli_query($condb, $query_my_order);
                               <tr>
                         
                                   <th>ชื่อสินค้า</th>
-                                  <th>จำนวนยอดขาย</th>
+                                  <th>จำนวน</th>
                                   
                               </tr>
                           </thead>

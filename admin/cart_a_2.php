@@ -55,18 +55,17 @@
 
 
 <form id="frmcart" name="frmcart" method="post" action="?t_id=<?php echo $t_id;?>&b_id=<?php echo $b_id;?>=1&act=update">
-	<h4>รายการสั่งซื้อ</h4>
-	<br>
+
   <table border="0" align="center" class="table table-hover table-bordered table-striped">
     
     <tr>
-      <td width="1%" >#</td>
+      <td width="1%" ><center>ลำดับ</center></td>
       
-      <td width="5%" >สินค้า</td>
-      <td width="4%" >ราคา</td>
-      <td width="15%" >จำนวน</td>
-      <td width="4%" >รวม(บาท)</td>
-      <td width="3%" >ลบ</td>
+      <td width="5%" ><center>สินค้า</center></td>
+      <td width="4%" ><center>ราคา</center></td>
+      <td width="15%" ><center>จำนวน</center></td>
+      <td width="4%" ><center>รวม (บาท)</center></td>
+      <td width="3%" ><center>ลบ</center></td>
     </tr>
 <?php
 

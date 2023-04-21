@@ -31,17 +31,16 @@ $rs_t= mysqli_query($condb, $query_t);
   <aside class="main-sidebar sidebar-dark-gray elevation-4">
     <!-- Brand Logo -->
     <a href="" class="brand-link bg-gray">
-      <img src="../assets/dist/img/AdminLTELogo.png"
-           alt="AdminLTE Logo"
-           class="brand-image img-circle elevation-3"
+      <img src="../logo1.png"
+           class="brand-image img-circle"
            style="opacity: .8">
-      <span class="brand-text font-weight-light">ร้านธรรมโอสถ (<?php if ($m_level == 1) {
+      <span class="brand-text font-weight-light elevation-1 img-circle"  style="opacity: .8"> <?php if ($m_level == 1) {
           echo "Admin";
         }elseif ($m_level == 2) {
           echo "เภสัช";
         }else{
           echo "เจ้าของ";
-        }?>)</span>
+        }?></span>
     </a>
 
     <!-- Sidebar -->

@@ -62,13 +62,13 @@ $rs_member = mysqli_query($condb, $query_member);
                     <table id="example1" class="table table-bordered  table-hover table-striped">
   <thead>
     <tr class="danger">
-      <th width="1%"><center>ลำดับ</center></th>
-      <th width="10%">รูปภาพ</th>
-      <th width="20%">ชื่อ</th>
-      <th width="20%">ระดับผู้ใช้งาน</th>
-      <th width="20%">แก้ไข</th>
-      <th width="20%">ลบ</th>
-      
+    <center>
+    <th width="1%"><center>ลำดับ</center></th>
+      <th width="10%"><center>รูปภาพ</center></th>
+      <th width="40%"><center>ชื่อ</center></th>
+      <th width="20%"><center>ระดับผู้ใช้งาน</center></th>
+      <th width="20%"><center>แก้ไข</center></th>
+      <th width="20%"><center>ลบ</center></th>
     </tr>
   </thead>
   <tbody>
