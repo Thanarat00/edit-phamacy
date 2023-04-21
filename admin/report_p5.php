@@ -6,7 +6,7 @@ $menu = "report_p5"
 
 <?php 
  
-$query_my_order = "SELECT p.p_name, SUM(o.total) AS totol 
+$query_my_order = "SELECT p.p_name, SUM(o.p_c_qty) AS totol 
 FROM tbl_order_detail as o 
 INNER JOIN tbl_product as p ON p.p_id=o.p_id 
 INNER JOIN tbl_order as ord ON ord.order_id=o.order_id
