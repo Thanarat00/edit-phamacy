@@ -89,7 +89,7 @@
 <script>
   Swal.fire({
   title: 'สำเร็จ',
-  text: 'เพิ่มมูลประเภทสำเร็จ',
+  text: 'เพิ่มประเภทสำเร็จ',
   icon: 'success',
   confirmButtonText: 'ตกลง'
 })
@@ -126,7 +126,7 @@
 <script>
   Swal.fire({
   title: 'สำเร็จ',
-  text: 'เพิ่มมูลหมวดหมู่สำเร็จ',
+  text: 'เพิ่มหมวดหมู่สำเร็จ',
   icon: 'success',
   confirmButtonText: 'ตกลง'
 })
@@ -163,7 +163,7 @@
 <script>
   Swal.fire({
   title: 'สำเร็จ',
-  text: 'เพิ่มมูลสินค้าสำเร็จ',
+  text: 'เพิ่มสินค้าสำเร็จ',
   icon: 'success',
   confirmButtonText: 'ตกลง'
 })
@@ -175,7 +175,7 @@
 <script>
   Swal.fire({
   title: 'สำเร็จ',
-  text: 'แก้ไขสิน้าสำเร็จ | <?php echo $row['p_name'];?>',
+  text: 'แก้ไขสินค้าสำเร็จ | <?php echo $row['p_name'];?>',
   icon: 'success',
   confirmButtonText: 'ตกลง'
 })
@@ -187,7 +187,7 @@
 <script>
   Swal.fire({
   title: 'สำเร็จ',
-  text: 'ลบข้อมูลสิน้าสำเร็จ',
+  text: 'ลบข้อมูลสินค้าสำเร็จ',
   icon: 'success',
   confirmButtonText: 'ตกลง'
 })
