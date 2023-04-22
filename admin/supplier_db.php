@@ -71,11 +71,11 @@ if ($supplier == "add") {
 	if($result){
 	echo "<script type='text/javascript'>";
 	//echo "alert('แก้ไขข้อมูลเรียบร้อย');";
-	echo "window.location = 'supplier_edit.php?s_id=$s_id&&supplier_edit=supplier_edit'; ";
+	echo "window.location = 'list_supplier.php?s_id=$s_id&&supplier_edit=supplier_edit'; ";
 	echo "</script>";
 	}else{
 	echo "<script type='text/javascript'>";
-	echo "window.location = 'supplier_edit.php?s_id=$s_id&&supplier_edit_error=supplier_edit_error'; ";
+	echo "window.location = 'list_supplier.php?s_id=$s_id&&supplier_edit_error=supplier_edit_error'; ";
 	echo "</script>";
 }
 	

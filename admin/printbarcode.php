@@ -8,9 +8,8 @@ $tableh = '
     <style>
         body{
             font-family: "freemono"; //คือ TH salaban แปลงชื่อเนื่องจาก function เดิม ดักการเพิ่มของไฟล์ font ซึ่งแก้แล้วไม่ได้
-                display: flex; 
-                flex-wrap: wrap;
-                justify-content: center;
+			position: relative;
+			display: inline-block;
         }
 		caption {
 			position: absolute;

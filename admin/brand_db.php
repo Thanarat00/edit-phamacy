@@ -71,11 +71,11 @@ if ($brand == "add") {
 	if($result){
 	echo "<script type='text/javascript'>";
 	//echo "alert('แก้ไขข้อมูลเรียบร้อย');";
-	echo "window.location = 'brand_edit.php?b_id=$b_id&&brand_edit=list_brand.php'; ";
+	echo "window.location = 'list_brand.php?b_id=$b_id&&brand_edit=list_brand.php'; ";
 	echo "</script>";
 	}else{
 	echo "<script type='text/javascript'>";
-	echo "window.location = 'brand_edit.php?b_id=$b_id&&brand_edit_error=brand_edit_error'; ";
+	echo "window.location = 'list_brand.php?b_id=$b_id&&brand_edit_error=brand_edit_error'; ";
 	echo "</script>";
 }
 	

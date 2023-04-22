@@ -148,11 +148,11 @@ if ($member == "add") {
 	if($result){
 	echo "<script type='text/javascript'>";
 	//echo "alert('แก้ไขข้อมูลเรียบร้อย');";
-	echo "window.location = 'mem_edit.php?mem_id=$mem_id&&mem_edit=mem_edit'; ";
+	echo "window.location = 'list_mem.php?mem_id=$mem_id&&mem_edit=mem_edit'; ";
 	echo "</script>";
 	}else{
 	echo "<script type='text/javascript'>";
-	echo "window.location = 'mem_edit.php?mem_id=$mem_id&&mem_edit_error=mem_edit_error'; ";
+	echo "window.location = 'list_mem.php?mem_id=$mem_id&&mem_edit_error=mem_edit_error'; ";
 	echo "</script>";
 	}
 

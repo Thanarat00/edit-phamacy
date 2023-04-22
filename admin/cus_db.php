@@ -143,11 +143,11 @@ if ($cus == "add") {
 	
 	if($result){
 	echo "<script type='text/javascript'>";
-	echo "window.location = 'cus_edit.php?c_id=$c_id&&mem_edit=mem_edit'; ";
+	echo "window.location = 'list_cus.php?c_id=$c_id&&mem_edit=mem_edit'; ";
 	echo "</script>";
 	}else{
 	echo "<script type='text/javascript'>";
-	echo "window.location = 'cus_edit.php?c_id=$c_id&&mem_edit_error=mem_edit_error'; ";
+	echo "window.location = 'list_cus.php?c_id=$c_id&&mem_edit_error=mem_edit_error'; ";
 	echo "</script>";
 	}
 

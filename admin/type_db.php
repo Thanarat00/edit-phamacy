@@ -71,11 +71,11 @@ if ($type == "add") {
 	if($result){
 	echo "<script type='text/javascript'>";
 	//echo "alert('แก้ไขข้อมูลเรียบร้อย');";
-	echo "window.location = 'type_edit.php?t_id=$t_id&&type_edit=type_edit'; ";
+	echo "window.location = 'list_type.php?t_id=$t_id&&type_edit=type_edit'; ";
 	echo "</script>";
 	}else{
 	echo "<script type='text/javascript'>";
-	echo "window.location = 'type_edit.php?t_id=$t_id&&type_edit_error=type_edit_error'; ";
+	echo "window.location = 'list_type.php?t_id=$t_id&&type_edit_error=type_edit_error'; ";
 	echo "</script>";
 }
 	

@@ -178,11 +178,11 @@ if ($product == "add") {
 	if($result){
 	echo "<script type='text/javascript'>";
 	//echo "alert('แก้ไขข้อมูลเรียบร้อย');";
-	echo "window.location = 'product_edit.php?p_id=$p_id&&product_edit=product_edit'; ";
+	echo "window.location = 'list_product.php?p_id=$p_id&&product_edit=product_edit'; ";
 	echo "</script>";
 	}else{
 	echo "<script type='text/javascript'>";
-	echo "window.location = 'product_edit.php?p_id=$p_id&&product_edit_error=product_edit_error'; ";
+	echo "window.location = 'list_product.php?p_id=$p_id&&product_edit_error=product_edit_error'; ";
 	echo "</script>";
 }
 	
