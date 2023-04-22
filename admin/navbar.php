@@ -5,11 +5,11 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link <?php if ($menu == "index"){echo "active";} ?>"  href="index.php"><i class="fas fa-home"></i> Home</a>
+        <a class="nav-link <?php if ($menu == "index"){echo "active";} ?>"  href="index.php"><i class="fas fa-home"></i> หน้าแรก</a>
       </li>
 
       <li class="nav-item">
-        <a target="_bank" class="nav-link"  href="printbarcode.php"><i class="fas fa-qrcode"></i> print barcode</a>
+        <a target="_bank" class="nav-link"  href="printbarcode.php"><i class="fas fa-qrcode"></i> บาร์โค้ด</a>
       </li>
      
     </ul>

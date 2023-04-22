@@ -1,7 +1,9 @@
 <?php
 	require_once __DIR__ . '../../vendor/autoload.php';
      include('../condb.php');
+  
 
+    
 	
 $tableh = '
     <style>
@@ -12,14 +14,6 @@ $tableh = '
 
     <h2 style="text-align:center"><br>ร้านธรรมโอสถ</h2>
 
-    <table id="bg-table" width="100%" style="border-collapse: collapse;font-size:12pt;margin-top:8px;">
-        <tr style="border:1px solid #000;padding:4px;">
-            <td  style="border-right:1px solid #000;padding:4px;text-align:center;"   width="10%">ลำดับ</td>
-            <td  style="border-right:1px solid #000;padding:4px;text-align:center;"  width="15%">ชื่อสินค้า</td>
-            <td  width="15%" style="border-right:1px solid #000;padding:4px;text-align:center;">&nbsp; ราคา </td>
-            
-            <td  style="border-right:1px solid #000;padding:4px;text-align:center;" width="15%">BARCODE</td>
-        </tr>
 
     </thead>
         <tbody>';
@@ -30,18 +24,11 @@ $tableh = '
         $i = 1;
         while($row = mysqli_fetch_assoc($result)) {
             $tablebody .= '<tr style="border:1px solid #000;">
-                <td style="border-right:1px solid #000;padding:3px;text-align:center;"  >'.$i.'</td>
-                <td style="border-right:1px solid #000;padding:3px;">'.$row['p_name'].'</td>
-                <td style="border-right:1px solid #000;padding:3px;">'.$row['p_price'].'</td>
-
-
-
-                
-
-
-
-
-                <td style="border-right:1px solid #000;padding:3px;"><barcode code="'.$row['p_barcode'].'" type="C128A" class="barcode" /></td>
+               '.$i.'
+      
+                <td style="border:1.5%,height:40%,width:10%,size:auto;"><barcode code="'.$row['p_barcode'].'" type="C128A" class="barcode" />
+                <center><div style = "margin-left:14%">'.$row['p_barcode'].'</div></center>
+                </td>
 
 
 
@@ -54,7 +41,7 @@ mysqli_close($conn);
 
 
 $tableend = "</tbody>
-</table>";
+";
 
 
 $body_1='
