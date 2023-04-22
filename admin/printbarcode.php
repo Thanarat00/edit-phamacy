@@ -1,4 +1,5 @@
 
+
 <?php
 	require_once __DIR__ . '../../vendor/autoload.php';
      include('../condb.php');
@@ -7,16 +8,19 @@
 $tableh = '
     <style>
         body{
-            font-family: "freemono"; //คือ TH salaban แปลงชื่อเนื่องจาก function เดิม ดักการเพิ่มของไฟล์ font ซึ่งแก้แล้วไม่ได้
+            font-family: "freemono";
 			position: relative;
-			display: inline-block;
+            display: flex;
         }
+        barcode {
+			display: block;
+			margin: 0 auto;
+		}
 		caption {
+            margin-top: 10%;
 			position: absolute;
 			bottom: 0.5;
-			left: 0;
 			width: 100%;
-			text-align: center;
 			font-size: 18px;
 			font-weight: bold;
 			padding: 10px;
@@ -26,8 +30,6 @@ $tableh = '
            
     </style>
 
-    <h2 style="text-align:center"><br>ร้านธรรมโอสถ</h2>
-
 
     </thead>
         <tbody>';
@@ -36,12 +38,22 @@ $tableh = '
     $content = "";
         while($row = mysqli_fetch_assoc($result)) {
             $tablebody .= '
-        
-               <barcode code="'.$row['p_barcode'].'" type="C128A" class"barcode-image" >
-               <div class="caption">'.$row['p_barcode'].'</div>
+
+            <div class="container">
+            <div class="row">
+              <div class="col-12 col-sm-3 col-md-3">
+                <div class="caption" style="margin-left: 12%;">'.$row['p_name'].'</div>
+                <barcode code="'.$row['p_barcode'].'" type="C128A" class"barcode" style = "box-shadow: 0 0 20px rgba(0,139,253,0.25);" >
+               <div class="caption" style="margin-left: 12%">'.$row['p_barcode'].'</div>
+               <div class="caption" style="margin-left: 12%;">ราคา: '.$row['p_price'].' บาท</div>
                </barcode>
 
 
+              </div>
+            </div>
+          </div>
+   
+              
 
             '; 
         
