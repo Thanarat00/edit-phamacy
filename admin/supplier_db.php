@@ -34,7 +34,7 @@ if ($supplier == "add") {
 	if($result){
 	echo "<script type='text/javascript'>";
 	//echo "alert('เพิ่มข้อมูลเรียบร้อย');";
-	echo "window.location = 'list_supplier.php?upplier_add=supplier_add'; ";
+	echo "window.location = 'list_supplier.php?supplier_add=supplier_add'; ";
 	echo "</script>";
 	}else{
 	echo "<script type='text/javascript'>";

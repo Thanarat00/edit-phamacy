@@ -120,7 +120,40 @@
 </script>
 <?php } ?>
 
+<?php if(isset($_GET['supplier_add'])){ ?>
+<script>
+  Swal.fire({
+  title: 'สำเร็จ',
+  text: 'เพิ่มผู้ผลิตสำเร็จ',
+  icon: 'success',
+  confirmButtonText: 'ตกลง'
+})
+</script>
+<?php } ?>
 
+
+<?php if(isset($_GET['supplier_edit'])){ ?>
+<script>
+  Swal.fire({
+  title: 'สำเร็จ',
+  text: 'แก้ไขมูลผ้ผลิตสำเร็จ | <?php echo $row['s_name'];?>',
+  icon: 'success',
+  confirmButtonText: 'ตกลง'
+})
+</script>
+<?php } ?>
+
+
+<?php if(isset($_GET['supplier_del'])){ ?>
+<script>
+  Swal.fire({
+  title: 'สำเร็จ',
+  text: 'ลบข้อมูลสำเร็จ',
+  icon: 'success',
+  confirmButtonText: 'ตกลง'
+})
+</script>
+<?php } ?>
 
 <?php if(isset($_GET['brand_add'])){ ?>
 <script>
