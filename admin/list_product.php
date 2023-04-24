@@ -308,18 +308,7 @@ $rs_supplier = mysqli_query($condb, $query_supplier);
                     </div>
                   </div>
 
-                   
-
-                  <div class="form-group row">
-                    <label for="" class="col-sm-2 col-form-label">บาร์โค้ด </label>
-                    <div class="col-sm-10">
-                      <input  name="p_barcode" type="text" required class="form-control"  placeholder=""  minlength="3"/>
-                    </div>
-                  </div>
-
-                 
-
-                    
+  
 
                   <div class="form-group row">
                     <label for="" class="col-sm-2 col-form-label">ชื่อ </label>

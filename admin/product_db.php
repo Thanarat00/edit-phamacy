@@ -13,10 +13,8 @@ if ($product == "add") {
 
 
 	$t_id = mysqli_real_escape_string($condb,$_POST["t_id"]);
-
 	$b_id = mysqli_real_escape_string($condb,$_POST["b_id"]);
 	$p_name = mysqli_real_escape_string($condb,$_POST["p_name"]);
-	$p_barcode = mysqli_real_escape_string($condb,$_POST["p_barcode"]);
 	$p_detail = mysqli_real_escape_string($condb,$_POST["p_detail"]);
 	$p_detailmore = mysqli_real_escape_string($condb,$_POST["p_detailmore"]);
 	$p_license = mysqli_real_escape_string($condb,$_POST["p_license"]);
@@ -54,7 +52,6 @@ if ($product == "add") {
 	(
 	t_id, 
 	b_id, 
-	p_barcode, 
 	p_name, 
 	p_detail,
 	p_detailmore, 
@@ -71,7 +68,6 @@ if ($product == "add") {
 	(
 	'$t_id',
 	'$b_id',
-	'$p_barcode',
 	'$p_name',
 	'$p_detail',
 	'$p_detailmore',
@@ -118,7 +114,6 @@ if ($product == "add") {
  	$p_id = mysqli_real_escape_string($condb,$_POST["p_id"]);
 	$t_id = mysqli_real_escape_string($condb,$_POST["t_id"]);
 	$b_id = mysqli_real_escape_string($condb,$_POST["b_id"]);
-	$p_barcode = mysqli_real_escape_string($condb,$_POST["p_barcode"]);
 	$p_name = mysqli_real_escape_string($condb,$_POST["p_name"]);
 	$p_detail = mysqli_real_escape_string($condb,$_POST["p_detail"]);
 	$p_detailmore = mysqli_real_escape_string($condb,$_POST["p_detailmore"]);
@@ -154,7 +149,7 @@ if ($product == "add") {
 
 	
 	$sql = "UPDATE tbl_product SET 
-			  p_barcode = '$p_barcode',
+			  p_barcode = '',
 			  p_name = '$p_name', 
               p_detail = '$p_detail',
 			  p_detailmore = '$p_detailmore', 
