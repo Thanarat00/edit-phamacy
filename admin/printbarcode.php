@@ -23,7 +23,12 @@ $tableh = '
     <style>
         body{
             font-family: "freemono";
-            font-size : 20px;
+            font-size : 16px;
+            display: flex;
+            gap: 10px;
+            gap: 10px 20px; /* row-gap column gap */
+            row-gap: 10px;
+            column-gap: 20px;
         }
 
 
@@ -40,10 +45,10 @@ $tableh = '
             $tablebody .= '
 
             <div sty>
-                <div class="caption" style="margin-left: 5%;">'.$row['p_name'].'</div>
+                <div style="margin-left: 5%;">'.$row['p_name'].'</div>
                 <barcode code="'.$row['p_id'].'" type="C128A">
-               <div class="caption" style="margin-left: 4%">'.$row['p_barcode'].'</div>
-               <div class="caption" style="margin-left: 4%;">ราคา: '.$row['p_price'].' บาท</div>
+               <div  style="margin-left: 4%">'.$row['p_id'].'</div>
+               <div  style="margin-left: 4%;">ราคา: '.$row['p_price'].' บาท</div>
                </barcode>
 
           </div>
