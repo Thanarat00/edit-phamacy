@@ -156,7 +156,8 @@ function barcode($code){
                     <div class="col-md-12">
                       <form action="l_a.php"  method="GET" >
                  <div class="input-group">
-  
+                    <input type="text" name="p_id" class="form-control" placeholder="Scan Barcode" autofocus >
+
                     <input type="hidden" name="t_id" value="<?php echo $t_id;?>">
                     <input type="hidden" name="b_id" value="<?php echo $b_id;?>">
                      <!-- <span class="input-group-append">
