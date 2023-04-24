@@ -129,13 +129,7 @@ function barcode($code){
 
                     <div class="col-md-12">
                       <form action="list_l.php"  method="GET" >
-         
-                 <div class="input-group">
-                    <input type="text" name="p_barcode" class="form-control" placeholder="Scan Barcode" autofocus >
-                     <!-- <span class="input-group-append">
-                     <button class="btn btn-outline-success" type="submit">ค้นหา</button>
-                     </span> -->
-                  </div>
+   
 
 
 
@@ -160,9 +154,9 @@ function barcode($code){
                                 <?php if($rs_prd['p_qty'] > 0){ ?>
                                   <center>  
                                           <!-- QR Code -->
-  
+                                    
                                           <!-- Bar Code -->      
-                                          <?php echo barcode($rs_prd['p_barcode']); ?>
+                                          <?php echo barcode($rs_prd['p_id']); ?>
                                        
                                           <br>
 
