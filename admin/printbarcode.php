@@ -45,14 +45,13 @@ $tableh = '
             $tablebody .= '
 
             <div sty>
-                <div style="margin-left: 5%;">'.$row['p_name'].'</div>
+                <div style="margin-left: 12%;">'.$row['p_name'].'</div>
                 <barcode code="'.$row['p_id'].'" type="C128A">
-               <div  style="margin-left: 8%">'.$row['p_id'].'</div>
-               <div  style="margin-left: 4%;">ราคา: '.$row['p_price'].' บาท</div>
+               <div  style="margin-left: 12%">'.$row['p_id'].'</div>
+               <div  style="margin-left: 12%;">ราคา: '.$row['p_price'].' บาท</div>
                </barcode>
 
           </div>
-   
               
 
         ';
