@@ -36,13 +36,15 @@ $tableh = '
     $sql = "SELECT * FROM tbl_product";
     $result = mysqli_query($condb, $sql);
     $content = "";
+    if (mysqli_num_rows($result) > 0) {
+        $i = 1;
         while($row = mysqli_fetch_assoc($result)) {
             $tablebody .= '
 
             <div class="container">
             <div class="row">
               <div class="col-12 col-sm-3 col-md-3">
-                <div class="caption" style="margin-left: 12%;">'.$row['p_name'].'</div>
+                <div class="caption" style="margin-left: 12%;">'.$i.' '.$row['p_name'].'</div>
                 <barcode code="'.$row['p_barcode'].'" type="C128A" class"barcode" style = "box-shadow: 0 0 20px rgba(0,139,253,0.25);" >
                <div class="caption" style="margin-left: 12%">'.$row['p_barcode'].'</div>
                <div class="caption" style="margin-left: 12%;">ราคา: '.$row['p_price'].' บาท</div>
@@ -56,7 +58,8 @@ $tableh = '
               
 
             '; 
-        
+            $i++;
+        }
     }
     
 mysqli_close($conn);
