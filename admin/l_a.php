@@ -156,7 +156,7 @@ function barcode($code){
                     <div class="col-md-12">
                       <form action="l_a.php"  method="GET" >
                  <div class="input-group">
-                    <input type="text" name="p_id" class="form-control" placeholder="Scan Barcode" autofocus >
+                    <input type="text" name="p_barcode" class="form-control" placeholder="Scan Barcode" autofocus >
 
                     <input type="hidden" name="t_id" value="<?php echo $t_id;?>">
                     <input type="hidden" name="b_id" value="<?php echo $b_id;?>">
@@ -188,9 +188,8 @@ function barcode($code){
                                 <?php if($rs_prd['p_qty'] > 0){ ?>
                                   <center>  
                                           <!-- QR Code -->
-                                              <!-- <img src="https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=<?php echo $rs_prd['p_id'];?>&choe=UTF-8" title="Link to my Website" /> -->
                                           <!-- Bar Code -->      
-                                          <?php echo barcode($rs_prd['p_id']); ?>
+                                          <?php echo barcode($rs_prd['p_barcode']); ?>
                                        
                                           <br>
 

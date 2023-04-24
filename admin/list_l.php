@@ -93,7 +93,7 @@ include "../barcode/src/BarcodeGeneratorHTML.php";
 function barcode($code){
   
   $generator = new Picqer\Barcode\BarcodeGeneratorHTML();
-  $border = 1.5;//กำหนดความหน้าของเส้น Barcode
+  $border = 1;//กำหนดความหน้าของเส้น Barcode
   $height = 40;//กำหนดความสูงของ Barcode
 
   return $generator->getBarcode($code , $generator::TYPE_CODE_128,$border,$height);
@@ -131,7 +131,7 @@ function barcode($code){
                       <form action="list_l.php"  method="GET" >
          
                  <div class="input-group">
-                    <input type="text" name="p_id" class="form-control" placeholder="Scan Barcode" autofocus >
+                    <input type="text" name="p_barcode" class="form-control" placeholder="Scan Barcode" autofocus >
                      <!-- <span class="input-group-append">
                      <button class="btn btn-outline-success" type="submit">ค้นหา</button>
                      </span> -->
@@ -160,9 +160,9 @@ function barcode($code){
                                 <?php if($rs_prd['p_qty'] > 0){ ?>
                                   <center>  
                                           <!-- QR Code -->
-                                              <!-- <img src="https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=<?php echo $rs_prd['p_id'];?>&choe=UTF-8" title="Link to my Website" /> -->
+  
                                           <!-- Bar Code -->      
-                                          <?php echo barcode($rs_prd['p_id']); ?>
+                                          <?php echo barcode($rs_prd['p_barcode']); ?>
                                        
                                           <br>
 
