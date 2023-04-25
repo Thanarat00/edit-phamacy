@@ -93,10 +93,10 @@ include "../barcode/src/BarcodeGeneratorHTML.php";
 function barcode($code){
   
   $generator = new Picqer\Barcode\BarcodeGeneratorHTML();
-  $border = 1;//กำหนดความหน้าของเส้น Barcode
+  $border = 1.5;//กำหนดความหน้าของเส้น Barcode
   $height = 40;//กำหนดความสูงของ Barcode
 
-  return $generator->getBarcode($code , $generator::TYPE_CODE_128,$border,$height);
+  return $generator->getBarcode($code , $generator::TYPE_CODE_11,$border,$height);
 
 }
 ?>
@@ -128,18 +128,20 @@ function barcode($code){
              
 
                     <div class="col-md-12">
-                  <form action="Search_p.php"  method="POST" >
+                    <form action="list_l.php"  method="GET" >
+                  <div class="input-group">
+                     <input type="hidden" name="p_id" class="form-control">
+                  </div>
+              </form>
+              <form action="Search_p.php"  method="POST" >
                  <div class="input-group">
                      <input type="text" name="p_name" class="form-control" placeholder="ค้นหา">
                      <span class="input-group-append">
                      <button class="btn btn-outline-success" type="submit">ค้นหา</button>
                      </span>
                   </div>
-
-
-                  
               </form>
-              <br>
+                  <br>
                           <?php if ($row >0) {?> 
                             <div class="row">
                             

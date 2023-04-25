@@ -46,7 +46,7 @@ $tableh = '
 
             <div sty>
                 <div style="margin-left: 12%;">'.$row['p_name'].'</div>
-                <barcode code="'.$row['p_id'].'" type="C128A">
+                <barcode code="'.$row['p_id'].'" type="CODE11">
                <div  style="margin-left: 12%">'.$row['p_id'].'</div>
                <div  style="margin-left: 12%;">ราคา: '.$row['p_price'].' บาท</div>
                </barcode>

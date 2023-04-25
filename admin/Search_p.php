@@ -4,14 +4,16 @@
 <?php 
 
 
+
 $p_name = $_POST['p_name'];
+
 // echo "<pre>";
 // print_r($_POST);
 // echo "</pre>";
 //exit();
 
 $query_product = " SELECT * FROM tbl_product 
-WHERE (p_name  Like '%$p_name%' OR p_id  Like '%$p_name%');
+WHERE  (p_name  Like '%$p_name%' OR p_id Like '%$p_name%');
 
 " or die
 ("Error : ".mysqlierror($query_product));
@@ -42,7 +44,7 @@ function barcode($code){
   $border = 1;//กำหนดความหน้าของเส้น Barcode
   $height = 40;//กำหนดความสูงของ Barcode
 
-  return $generator->getBarcode($code , $generator::TYPE_CODE_128,$border,$height);
+  return $generator->getBarcode($code , $generator::TYPE_CODE_11,$border,$height);
 
 }
 ?>
