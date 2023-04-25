@@ -4,9 +4,22 @@
 <?php 
 
 
-$query_product = " SELECT * FROM tbl_product " or die
+$p_name = $_POST['p_name'];
+// echo "<pre>";
+// print_r($_POST);
+// echo "</pre>";
+//exit();
+
+$query_product = " SELECT * FROM tbl_product 
+WHERE (p_name  Like '%$p_name%' OR p_id  Like '%$p_name%');
+
+" or die
 ("Error : ".mysqlierror($query_product));
+
 $rs_product = mysqli_query($condb, $query_product);
+
+
+$row = mysqli_num_rows($rs_product);
 
 // $query_product = " SELECT * FROM tbl_product ORDER BY rand()" or die
 // ("Error : ".mysqlierror($query_product));
@@ -16,74 +29,7 @@ $rs_product = mysqli_query($condb, $query_product);
 
 ?>
 
-<?php 
 
-$query=mysqli_query($condb,"SELECT COUNT(p_id) FROM `tbl_product`");
-
-$row = mysqli_fetch_row($query);
-
-$rows = $row[0];
-$page_rows = 20;  //จำนวนข้อมูลที่ต้องการให้แสดงใน 1 หน้า  ตย. 5 record / หน้า 
-$last = ceil($rows/$page_rows);
-if($last < 1){
-$last = 1;
-}
-$pagenum = 1;
-if(isset($_GET['pn'])){
-$pagenum = preg_replace('#[^0-9]#', '', $_GET['pn']);
-}
-if ($pagenum < 1) {
-$pagenum = 1;
-}
-else if ($pagenum > $last) {
-$pagenum = $last;
-}
-$limit = 'LIMIT ' .($pagenum - 1) * $page_rows .',' .$page_rows;
-$nquery=mysqli_query($condb,"SELECT * from  tbl_product ORDER BY p_id DESC $limit");
-
-$paginationCtrls = '';
-if($last != 1){
-if ($pagenum > 1) {
-$previous = $pagenum - 1;
-$paginationCtrls .= '<a href="'.$_SERVER['PHP_SELF'].'?pn='.$previous.'" class="btn btn-info">Previous</a> &nbsp; ';
-
-
-for($i = $pagenum-4; $i < $pagenum; $i++){
-if($i > 0){
-$paginationCtrls .= '<a href="'.$_SERVER['PHP_SELF'].'?pn='.$i.'" class="btn btn-primary">'.$i.'</a> &nbsp; ';
-}
-}
-}
-
-
-//$paginationCtrls .= ''.$pagenum.' &nbsp; ';
-
-
-$paginationCtrls .= '<a href=""class="btn btn-danger">'.$pagenum.'</a> &nbsp; ';
-
-
-
-
-for($i = $pagenum+1; $i <= $last; $i++){
-$paginationCtrls .= '<a href="'.$_SERVER['PHP_SELF'].'?pn='.$i.'" class="btn btn-primary">'.$i.'</a> &nbsp; ';
-if($i >= $pagenum+4){
-break;
-}
-}
-
-
-if ($pagenum != $last) {
-$next = $pagenum + 1;
-
-
-$paginationCtrls .= ' &nbsp;<a href="'.$_SERVER['PHP_SELF'].'?pn='.$next.'" class="btn btn-info">Next</a> ';
-}
-}
-
-
-
-
-?>
 
 <?php 
 include "../barcode/src/BarcodeGenerator.php";
@@ -130,7 +76,7 @@ function barcode($code){
                     <div class="col-md-12">
                   <form action="Search_p.php"  method="POST" >
                  <div class="input-group">
-                     <input type="text" name="p_name" class="form-control" placeholder="ค้นหา">
+                 <input type="text" name="p_name" class="form-control" placeholder="ค้นหา">
                      <span class="input-group-append">
                      <button class="btn btn-outline-success" type="submit">ค้นหา</button>
                      </span>
@@ -140,11 +86,12 @@ function barcode($code){
                   
               </form>
               <br>
-                          <?php if ($row >0) {?> 
+              <?php if ($row >0) {?>
+
                             <div class="row">
                             
 
-                            <?php while($rs_prd = mysqli_fetch_array($nquery)){ ?> 
+                            <?php foreach ($rs_product as $rs_prd)  {?>
 
                             <div class="col-md-3">
                              
@@ -183,6 +130,9 @@ function barcode($code){
                             </div>
 
                           <?php }else{?>
+                            <div class="container">
+                            <h4><center>ไม่พบสินค้าที่ค้นหา โปรดค้นหาโดยระบุชื่อสินค้าในการค้นหา</center></h4>
+                            </div>
                           <?php }?>
                     </div>
 

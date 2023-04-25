@@ -302,15 +302,7 @@ $rs_member = mysqli_query($condb, $query_member);
 <script>
   $(function () {
     $(".datatable").DataTable();
-    // $('#example2').DataTable({
-    //   "paging": true,
-    //   "lengthChange": false,
-    //   "searching": false,
-    //   "ordering": true,
-    //   "info": true,
-    //   "autoWidth": false,
-    // http://fordev22.com/
-    // });
+
   });
 </script>
   
@@ -318,4 +310,3 @@ $rs_member = mysqli_query($condb, $query_member);
 </html>
 
 
-<!-- http://fordev22.com/ -->
