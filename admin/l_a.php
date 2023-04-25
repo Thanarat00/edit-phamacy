@@ -138,7 +138,7 @@ function barcode($code){
 
     <div class="card card-gray">
             <div class="card-header ">
-              <h3 class="card-title">สินค้า IN STOCK</h3>
+              <h3 class="card-title">ขายสินค้า</h3>
             </div>
             <br>
 

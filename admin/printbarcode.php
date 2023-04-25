@@ -14,7 +14,7 @@
        $border = 1;//กำหนดความหน้าของเส้น Barcode
        $height = 40;//กำหนดความสูงของ Barcode
      
-       return $generator->getBarcode($code , $generator::TYPE_CODE_128,$border,$height);
+       return $generator->getBarcode($code , $generator::TYPE_CODE_11,$border,$height);
      
      }
 
@@ -24,11 +24,7 @@ $tableh = '
         body{
             font-family: "freemono";
             font-size : 16px;
-            display: flex;
-            gap: 10px;
-            gap: 10px 20px; /* row-gap column gap */
-            row-gap: 10px;
-            column-gap: 20px;
+            display : flax;          
         }
 
 
@@ -44,11 +40,9 @@ $tableh = '
         while($row = mysqli_fetch_assoc($result)) {
             $tablebody .= '
 
-            <div sty>
-                <div style="margin-left: 12%;">'.$row['p_name'].'</div>
+            <div>
                 <barcode code="'.$row['p_id'].'" type="CODE11">
-               <div  style="margin-left: 12%">'.$row['p_id'].'</div>
-               <div  style="margin-left: 12%;">ราคา: '.$row['p_price'].' บาท</div>
+
                </barcode>
 
           </div>
@@ -62,17 +56,6 @@ mysqli_close($conn);
 
 
 
-$body_1='
-    <style>
-        body{
-
-            //font-family: "garuda";
-
-              font-family: "freemono"
-
-
-        }
-    </style>';
 
 
 
