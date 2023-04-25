@@ -118,10 +118,10 @@ include "../barcode/src/BarcodeGeneratorHTML.php";
 function barcode($code){
   
   $generator = new Picqer\Barcode\BarcodeGeneratorHTML();
-  $border = 1.5;//กำหนดความหน้าของเส้น Barcode
+  $border = 1;//กำหนดความหน้าของเส้น Barcode
   $height = 40;//กำหนดความสูงของ Barcode
 
-  return $generator->getBarcode($code , $generator::TYPE_CODE_128,$border,$height);
+  return $generator->getBarcode($code , $generator::TYPE_CODE_11,$border,$height);
 
 }
 ?>
@@ -154,19 +154,20 @@ function barcode($code){
                       <?php include('cart_a_2.php');?>
                     </div>
                     <div class="col-md-12">
-                      <form action="l_a.php"  method="GET" >
+                  <form action="l_a.php"  method="GET" >
                  <div class="input-group">
-                    <input type="text" name="p_id" class="form-control" placeholder="Scan Barcode" autofocus >
-
-                    <input type="hidden" name="t_id" value="<?php echo $t_id;?>">
-                    <input type="hidden" name="b_id" value="<?php echo $b_id;?>">
-                     <!-- <span class="input-group-append">
-                     <button class="btn btn-outline-success" type="submit">ค้นหา</button>
-                     </span> -->
+                     <input type="hidden" name="p_id" class="form-control" placeholder="ค้นหา">
+                     <input type="hidden" name="t_id" value="<?php echo $t_id;?>">
+                     <input type="hidden" name="b_id" value="<?php echo $b_id;?>">
                   </div>
-
-
-
+                  <form action="Search_p.php"  method="POST" >
+                 <div class="input-group">
+                     <input type="text" name="p_name" class="form-control" placeholder="ค้นหา">
+                     <span class="input-group-append">
+                     <button class="btn btn-outline-success" type="submit">ค้นหา</button>
+                     </span>
+                  </div>
+              </form>
                   
               </form>
               <br>
