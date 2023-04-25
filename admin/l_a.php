@@ -147,19 +147,21 @@ function barcode($code){
               <div class="card-body">
 
                 <div class="col-md-12">
-
+                <form action="l_a.php"  method="GET" >
+                 <div class="input-group">
+                     <input type="text" name="p_id" class="form-control" placeholder="สแกนบาร์โค้ด">
+                     <input type="hidden" name="t_id" value="<?php echo $t_id;?>">
+                     <input type="hidden" name="b_id" value="<?php echo $b_id;?>">
+                  </div>
+                  </form>
+                  <br>
                   <div class="row">
 
                   <div class="col-md-12">
                       <?php include('cart_a_2.php');?>
                     </div>
                     <div class="col-md-12">
-                  <form action="l_a.php"  method="GET" >
-                 <div class="input-group">
-                     <input type="hidden" name="p_id" class="form-control" placeholder="ค้นหา">
-                     <input type="hidden" name="t_id" value="<?php echo $t_id;?>">
-                     <input type="hidden" name="b_id" value="<?php echo $b_id;?>">
-                  </div>
+
                   <form action="Search_p.php"  method="POST" >
                  <div class="input-group">
                      <input type="text" name="p_name" class="form-control" placeholder="ค้นหา">
@@ -169,7 +171,7 @@ function barcode($code){
                   </div>
               </form>
                   
-              </form>
+          
               <br>
                           <?php if ($row >0) {?> 
                             <div class="row">

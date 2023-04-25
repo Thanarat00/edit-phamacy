@@ -7,6 +7,7 @@
 
 $p_name = $_POST['p_name'];
 
+
 // echo "<pre>";
 // print_r($_POST);
 // echo "</pre>";
@@ -67,25 +68,25 @@ function barcode($code){
 
               <div class="card-body">
 
-                <div class="col-md-12">
-                <?php include('cart_a_2.php');?>
-                  <div class="row">
-
-                  
-
+              <div class="col-md-12">
+                <form action="list_l.php"  method="GET" >
+                  <div class="input-group">
+                     <input type="text" name="p_id" class="form-control" placeholder="สแกนบาร์โค้ด">
+                  </div>
+                    </form>
+                    <br>
              
+                  <div class="row">
+                  <?php include('cart_a_2.php');?>
 
                     <div class="col-md-12">
-                  <form action="Search_p.php"  method="POST" >
+              <form action="Search_p.php"  method="POST" >
                  <div class="input-group">
-                 <input type="text" name="p_name" class="form-control" placeholder="ค้นหา">
+                     <input type="text" name="p_name" class="form-control" placeholder="ค้นหา">
                      <span class="input-group-append">
                      <button class="btn btn-outline-success" type="submit">ค้นหา</button>
                      </span>
                   </div>
-
-
-                  
               </form>
               <br>
               <?php if ($row >0) {?>
