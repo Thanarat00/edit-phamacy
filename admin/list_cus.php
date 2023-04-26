@@ -218,7 +218,7 @@ $rs_cus = mysqli_query($condb, $query_member);
                   <div class="form-group row">
                     <label for="" class="col-sm-2 col-form-label">เบอร์โทรศัพท์</label>
                     <div class="col-sm-10">
-                      <input type="text" name="c_phone" class="form-control" id="c_phone" placeholder="" value="">
+                      <input type="number" name="c_phone" class="form-control" id="c_phone" placeholder="" value="">
                     </div>
                   </div>
                   

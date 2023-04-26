@@ -5,7 +5,7 @@ $menu = "member"
 <?php include("header.php"); ?>
 
 <?php 
-$query_member = "SELECT * FROM tbl_member  WHERE ref_l_id =2" or die
+$query_member = "SELECT * FROM tbl_member  WHERE ref_l_id = 2 " or die
 ("Error : ".mysqlierror($query_member));
 $rs_member = mysqli_query($condb, $query_member);
 //echo ($query_level);//test query

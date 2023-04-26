@@ -6,7 +6,7 @@ include('../condb.php');
 // echo "</pre>";
 
 //exit();
-@$cus = $_POST['cus'];
+$cus = $_POST['cus'];
 if ($cus == "add") {
 
 

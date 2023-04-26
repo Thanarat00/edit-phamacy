@@ -39,7 +39,7 @@ $rs_t= mysqli_query($condb, $query_t);
         }elseif ($m_level == 2) {
           echo "เภสัช";
         }else{
-          echo "เจ้าของ";
+          echo "เจ้าของกิจการ";
         }?></span>
     </a>
 
@@ -84,20 +84,13 @@ $rs_t= mysqli_query($condb, $query_t);
 
 
 
-          <li class="nav-item">
+          <li class="nav-header" <?php if($menu=="sale_type"){echo "active";} ?>> ขายแยกประเภท</li>
 
 
-
-            <a href="#" class="nav-link <?php if($menu=="sale_type"){echo "active";} ?> ">
-              <i class="nav-icon fas fa-cart-arrow-down"></i>
-              <p>
-                ขายแยกประเภท
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
+           
 
 
-            <ul class="nav nav-treeview" style="display: none;">
+            <ul  >
               <?php foreach ($rs_t as $rs_t ) {
                                  $t_id = $rs_t['t_id'];
                                 $query_p = "SELECT * FROM tbl_product
@@ -136,7 +129,7 @@ $rs_t= mysqli_query($condb, $query_t);
               </li>
               <?php }?>
             </ul>
-          </li>
+
 
 
 
@@ -151,9 +144,6 @@ $rs_t= mysqli_query($condb, $query_t);
 
 
         </ul>
-
-
-
 
 
 
@@ -307,21 +297,8 @@ $rs_t= mysqli_query($condb, $query_t);
 
 
 
-
-          <li class="nav-item">
-
-
-
-            <a href="#" class="nav-link <?php if($menu=="sale_type"){echo "active";} ?> ">
-              <i class="nav-icon fas fa-cart-arrow-down"></i>
-              <p>
-                ขายแยกประเภท
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-
-
-            <ul class="nav nav-treeview" style="display: none;">
+          <li class="nav-header" <?php if($menu=="sale_type"){echo "active";} ?>> ขายแยกประเภท</li>
+          <ul>
               <?php foreach ($rs_t as $rs_t ) {
                                  $t_id = $rs_t['t_id'];
                                 $query_p = "SELECT * FROM tbl_product
@@ -359,10 +336,9 @@ $rs_t= mysqli_query($condb, $query_t);
                 <?php }?>
               </li>
               <?php }?>
-
             </ul>
-          
-          </li>
+
+         
          
           <hr>   
         <ul class="nav nav-pills nav-sidebar nav-child-indent flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -518,20 +494,10 @@ $rs_t= mysqli_query($condb, $query_t);
 
 
 
-          <li class="nav-item">
+          <li class="nav-header" <?php if($menu=="sale_type"){echo "active";} ?>> ขายแยกประเภท</li>
 
-
-
-            <a href="#" class="nav-link <?php if($menu=="sale_type"){echo "active";} ?> ">
-              <i class="nav-icon fas fa-cart-arrow-down"></i>
-              <p>
-                ขายแยกประเภท
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-
-
-            <ul class="nav nav-treeview" style="display: none;">
+          
+          <ul   >
               <?php foreach ($rs_t as $rs_t ) {
                                  $t_id = $rs_t['t_id'];
                                 $query_p = "SELECT * FROM tbl_product
@@ -570,7 +536,8 @@ $rs_t= mysqli_query($condb, $query_t);
               </li>
               <?php }?>
             </ul>
-          </li>
+
+
 
 
 

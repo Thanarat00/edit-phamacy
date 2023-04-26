@@ -57,33 +57,21 @@ $row=mysqli_fetch_array($rs_member);
               <div class="row">
                  
                  <div class="col-md-8">
-                   <form action="member_db.php" method="POST" enctype="multipart/form-data">
+                   <form action="member_db2.php" method="POST" enctype="multipart/form-data">
                     <input type="hidden" name="member" value="edit">
                     <input type="hidden" name="mem_id" value="<?php echo $row['mem_id'];?>">
                     <div class="form-group row">
                     <label for="" class="col-sm-2 col-form-label">ระดับการใช้งาน </label>
                     <div class="col-sm-10">
                       <select class="form-control select2" name="ref_l_id" id="ref_l_id" required>
-                        <option value="<?php echo $row['ref_l_id'];?>"><?php if ($row['ref_l_id']==2) {
-                          echo "เภสัช";
-                        }else{
-                          echo "เจ้าของกิจการ";
-                        }
-                          
-                         ?> </option>
-
-
-
-                          <option value="">-- เลือกประเภท --</option>
-                          <option value="2">เภสัช</option>
-                          <option value="3">เจ้าของกิจการ</option>
-                          
-
+                        <option value="<?php echo $row['ref_l_id'];?>" ><?php if ($row['ref_l_id']==2) {
+                                echo "เภสัช";}
+                        ?> 
                         </select>
-                      
+        
                     </div>
                   </div>
-                 
+                  
 
                   <div class="form-group row">
                     <label for="" class="col-sm-2 col-form-label">ชื่อ </label>
@@ -207,7 +195,15 @@ $row=mysqli_fetch_array($rs_member);
 <script>
   $(function () {
     $(".datatable").DataTable();
-
+    // $('#example2').DataTable({
+    //   "paging": true,
+    //   "lengthChange": false,
+    //   "searching": false,
+    //   "ordering": true,
+    //   "info": true,
+    //   "autoWidth": false,
+    // http://fordev22.com/
+    // });
   });
 </script>
   
