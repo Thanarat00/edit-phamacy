@@ -254,7 +254,7 @@ $rs_member = mysqli_query($condb, $query_member);
                         <br><br>
 
 
-                    <img id="blah" src="#" alt="your image" width="300" />
+                    <img id="blah" src="../upload.png" alt="your image" width="300" />
 
 
                     </div>

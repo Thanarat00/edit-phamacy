@@ -1,4 +1,5 @@
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 <?php 
 $menu = "product"
 ?>
@@ -120,7 +121,8 @@ $rs_supplier = mysqli_query($condb, $query_supplier);
     
     <tr>
      <td><?php echo @$l+=1; ?></td>
-     <td><img src="../p_img/<?php echo $row_product['p_img']; ?>" width="100%"></td>
+     <td >
+     <img src="../p_img/<?php echo $row_product['p_img']; ?>" width="100%" ></td>
 
    
      <td><?php echo $row_product['p_name']; ?>
@@ -425,7 +427,7 @@ $rs_supplier = mysqli_query($condb, $query_supplier);
                         <br><br>
 
 
-                    <img id="blah" src="#" alt="your image" width="300" />
+                    <img id="blah" src="../upload.png" alt="your image" width="300" />
 
 
                     </div>
@@ -445,7 +447,41 @@ $rs_supplier = mysqli_query($condb, $query_supplier);
 
     
 <?php include('footer.php'); ?>
+<script type="text/javascript">
+  $('[data-fancybox]').fancybox({
+//loop: false,
+loop: true,
+buttons: [
+"zoom",
+//"share",
+"slideShow",
+//"fullScreen",
+//"download",
+"thumbs",
+"close"
+],
+// Open/close animation type
+// Possible values:
+//   false            - disable
+//   "zoom"           - zoom images from/to thumbnail
+//   "fade"
+//   "zoom-in-out"
+//
+animationEffect: "zoom",
+// Transition effect between slides
+//
+// Possible values:
+//   false            - disable
+//   "fade'
+//   "slide'
+//   "circular'
+//   "tube'
+//   "zoom-in-out'
+//   "rotate'
+//
 
+});
+</script>
 <!-- <script>
   $(function () {
   $(".datatable").DataTable();

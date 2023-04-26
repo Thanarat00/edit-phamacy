@@ -14,16 +14,16 @@ $rs_member = mysqli_query($condb, $query_member);
 <script src="http://code.jquery.com/jquery-latest.js"></script>
       <script type="text/javascript">
         function readURL(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
+              if (input.files && input.files[0]) {
+              var reader = new FileReader();
+              reader.onload = function (e) {
+              $(input).parent().find('.blah').attr('src', e.target.result);
 
-                reader.onload = function (e) {
-                    $('#blah').attr('src', e.target.result);
-                }
+              };
 
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
+              reader.readAsDataURL(input.files[0]);
+              }
+              } 
 </script>
 
 
@@ -78,7 +78,8 @@ $rs_member = mysqli_query($condb, $query_member);
     
     <tr>
      <td><?php echo @$l+=1; ?></td>
-     <td><img src="../mem_img/<?php echo $row_member['mem_img']; ?>" width="100%"></td>
+     <td><a data-fancybox="gallery" href="../mem_img/<?php echo  $row_member['mem_img'] ;?>">
+      <img src="../mem_img/<?php echo $row_member['mem_img']; ?>" width="100%"></td>
 
      <td><?php echo $row_member['mem_name']; ?></td>
 
@@ -278,13 +279,25 @@ $rs_member = mysqli_query($condb, $query_member);
                         <br><br>
 
 
-                    <img id="blah" src="#" alt="your image" width="300" />
+                           <img class="blah" src="../upload.png" alt="your image" width="300" />
+
+
+                     <br>
+                  
+    
+                     <div class="custom-file">
+                          <input type="file" class="custom-file-input" id="mem_img" name="mem_img3" onchange="readURL(this);" >
+                          <label class="custom-file-label" for="file">อัพโหลดรูปภาพ</label>
+                        </div>
+                        <br><br>
+
+
+                    <img class="blah" src="../upload.png" alt="your image" width="300" />
 
 
                     </div>
                   </div>
-                    
-                    
+                     
                   
             </div>
             <div class="modal-footer">

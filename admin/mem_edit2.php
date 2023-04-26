@@ -134,7 +134,7 @@ $row=mysqli_fetch_array($rs_member);
                         <br><br>
 
 
-                    <img id="blah" src="#" alt="your image" width="300" />
+                    <img id="blah" src="../upload.png" alt="your image" width="300" />
 
 
                     </div>
