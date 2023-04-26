@@ -96,7 +96,7 @@ function barcode($code){
   $border = 1.5;//กำหนดความหน้าของเส้น Barcode
   $height = 40;//กำหนดความสูงของ Barcode
 
-  return $generator->getBarcode($code , $generator::TYPE_CODE_11,$border,$height);
+  return $generator->getBarcode($code , $generator::TYPE_CODE_128,$border,$height);
 
 }
 ?>
@@ -122,13 +122,15 @@ function barcode($code){
                 <div class="col-md-12">
                 <form action="list_l.php"  method="GET" >
                   <div class="input-group">
-                     <input type="number" name="p_id" class="form-control" placeholder="สแกนบาร์โค้ด">
+                     <input type="number" name="p_id" class="form-control" placeholder="สแกนบาร์โค้ด" id = "text2">
                   </div>
                     </form>
                     <br>
              
                   <div class="row">
-                  <?php include('cart_a_2.php');?>
+                  <div class="col-md-12">
+                      <?php include('cart_a_2.php');?>
+                    </div>
 
                     <div class="col-md-12">
               <form action="Search_p.php"  method="POST" >
@@ -231,6 +233,10 @@ function barcode($code){
     $(".datatable").DataTable();
 
   });
+
+</script>
+
+
 </script>
   
 </body>

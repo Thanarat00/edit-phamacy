@@ -149,7 +149,6 @@ if ($product == "add") {
 
 	
 	$sql = "UPDATE tbl_product SET 
-			  p_barcode = '',
 			  p_name = '$p_name', 
               p_detail = '$p_detail',
 			  p_detailmore = '$p_detailmore', 
