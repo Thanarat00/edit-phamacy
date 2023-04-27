@@ -13,17 +13,25 @@ $rs_member = mysqli_query($condb, $query_member);
 ?>
 <script src="http://code.jquery.com/jquery-latest.js"></script>
       <script type="text/javascript">
-        function readURL(input) {
-              if (input.files && input.files[0]) {
-              var reader = new FileReader();
-              reader.onload = function (e) {
-              $(input).parent().find('.blah').attr('src', e.target.result);
+         function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#blah').attr('src', e.target.result);
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
 
-              };
-
-              reader.readAsDataURL(input.files[0]);
-              }
-              } 
+    function readURL2(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#blah2').attr('src', e.target.result);
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
 </script>
 
 
@@ -64,7 +72,8 @@ $rs_member = mysqli_query($condb, $query_member);
     <tr class="danger">
       <th width="5%"><center>ลำดับ</center></th>
       <th width="10%">รูปภาพ</th>
-      <th width="40%">ชื่อ</th>
+      <th width="10%"><center>รูปภาพใบอนุญาต</center></th>
+      <th width="20%">ชื่อ</th>
       <th width="20%">ระดับผู้ใช้งาน</th>
       <th width="20%">สถานะการใช้งาน</th>
       <th width="20%">แก้ไข</th>
@@ -78,8 +87,13 @@ $rs_member = mysqli_query($condb, $query_member);
     
     <tr>
      <td><?php echo @$l+=1; ?></td>
-     <td><a data-fancybox="gallery" href="../mem_img/<?php echo  $row_member['mem_img'] ;?>">
-      <img src="../mem_img/<?php echo $row_member['mem_img']; ?>" width="100%"></td>
+     <td> <img src="../mem_img/<?php echo $row_member['mem_img']; ?>" width="100%"></td>
+      <td>
+      <center>
+    <a href="../mem_license/<?php echo $row_member['mem_license']; ?>" download="<?php echo $row_member['mem_license']; ?>">
+      <img src="../mem_license/<?php echo $row_member['mem_license']; ?>" width="100%">
+    </a>
+    </center>
 
      <td><?php echo $row_member['mem_name']; ?></td>
 
@@ -269,30 +283,29 @@ $rs_member = mysqli_query($condb, $query_member);
                   
                   
             
-                  <br>
+          
 
 
-                  <div class="custom-file">
-                          <input type="file" class="custom-file-input" id="mem_img" name="mem_img" onchange="readURL(this);" >
-                          <label class="custom-file-label" for="file">อัพโหลดรูปภาพ</label>
-                        </div>
-                        <br><br>
+                      <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="mem_img" name="mem_img" onchange="readURL(this);">
+                        <label class="custom-file-label" for="file">อัพโหลดรูปภาพ</label>
+                    </div>
+                    <br><br>
+                    <img class="blah" id="blah" src="../upload.png" alt="your image" width="300" />
 
+                    </div>
+                  </div>
+                     
+                  <div class="form-group row">
+                    <label for="" class="col-sm-2 col-form-label">รูปภาพใบอนุญาติ</label>
+                    <div class="col-sm-10">
 
-                           <img class="blah" src="../upload.png" alt="your image" width="300" />
-
-
-                     <br>
-                  
-    
-                     <div class="custom-file">
-                          <input type="file" class="custom-file-input" id="mem_img" name="mem_img3" onchange="readURL(this);" >
-                          <label class="custom-file-label" for="file">อัพโหลดรูปภาพ</label>
-                        </div>
-                        <br><br>
-
-
-                    <img class="blah" src="../upload.png" alt="your image" width="300" />
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="mem_img2" name="mem_license" onchange="readURL2(this);">
+                        <label class="custom-file-label" for="file">อัพโหลดรูปภาพ</label>
+                    </div>
+                    <br><br>
+                    <img class="blah" id="blah2" src="../upload.png" alt="your image" width="300" />
 
 
                     </div>

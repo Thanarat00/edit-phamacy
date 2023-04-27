@@ -74,8 +74,8 @@ $rs_member = mysqli_query($condb, $query_member);
     <center>
     <th width="1%"><center>ลำดับ</center></th>
       <th width="10%"><center>รูปภาพ</center></th>
-      <th width="20%"><center>รูปภาพใบอนุญาต</center></th>
-      <th width="40%"><center>ชื่อ</center></th>
+      <th width="10%"><center>รูปภาพใบอนุญาต</center></th>
+      <th width="20%"><center>ชื่อ</center></th>
       <th width="20%"><center>ระดับผู้ใช้งาน</center></th>
       <th width="20%"><center>แก้ไข</center></th>
       <th width="20%"><center>ลบ</center></th>
@@ -91,7 +91,7 @@ $rs_member = mysqli_query($condb, $query_member);
      <td>
       <center>
     <a href="../mem_license/<?php echo $row_member['mem_license']; ?>" download="<?php echo $row_member['mem_license']; ?>">
-      <img src="../mem_license/<?php echo $row_member['mem_license']; ?>" width="50%">
+      <img src="../mem_license/<?php echo $row_member['mem_license']; ?>" width="100%">
     </a>
     </center>
 </td>
@@ -287,7 +287,7 @@ $rs_member = mysqli_query($condb, $query_member);
                     </div>
                   </div>
                      
-                  <a href="#" onclick="downloadImage()"><img id="my-image" src="123png"></a>
+   
                     
                   
             </div>

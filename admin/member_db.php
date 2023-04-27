@@ -36,6 +36,21 @@ if ($member == "add") {
 	}else{
 		$newname='';
 	}
+	$date2 = date("Ymd_His");
+	$numrand = (mt_rand());
+	$mem_license = (isset($_POST['mem_license']) ? $_POST['mem_license'] : '');
+	$upload=$_FILES['mem_license']['name'];
+	if($upload !='') { 
+
+		$path="../mem_license/";
+		$type = strrchr($_FILES['mem_license']['name'],".");
+		$newname1 =$numrand.$date2.$type;
+		$path_copy=$path.$newname1;
+		// $path_link="../mem_img/".$newname;
+		move_uploaded_file($_FILES['mem_license']['tmp_name'],$path_copy);  
+	}else{
+		$newname1='';
+	}
 
 	$check = "
 	SELECT mem_username 
@@ -62,7 +77,8 @@ if ($member == "add") {
 	mem_username,
 	mem_password,
 	mem_status,
-	mem_img
+	mem_img,
+	mem_license
 	)
 	VALUES
 	(
@@ -71,7 +87,8 @@ if ($member == "add") {
 	'$mem_username',
 	'$mem_password',
 	'$mem_status',
-	'$newname'
+	'$newname',
+	'$newname1'
 	)";
 
 	$result = mysqli_query($condb, $sql) or die ("Error in query: $sql " . mysqli_error($condb). "<br>$sql");
@@ -115,7 +132,7 @@ if ($member == "add") {
 	$mem_password = mysqli_real_escape_string($condb,(sha1($_POST["mem_password"])));
 	$mem_img2 = mysqli_real_escape_string($condb,$_POST['mem_img2']);
 	$mem_status = mysqli_real_escape_string($condb,(($_POST["mem_status"])));
-
+	$mem_license2 = mysqli_real_escape_string($condb,$_POST['mem_license2']);
 	$date1 = date("Ymd_His");
 	$numrand = (mt_rand());
 	$mem_img = (isset($_POST['mem_img']) ? $_POST['mem_img'] : '');
@@ -132,6 +149,22 @@ if ($member == "add") {
 		$newname=$mem_img2;
 	}
 
+	$date2 = date("Ymd_His");
+	$numrand = (mt_rand());
+	$mem_license = (isset($_POST['mem_license']) ? $_POST['mem_license'] : '');
+	$upload=$_FILES['mem_license']['name'];
+	if($upload !='') { 
+
+		$path="../mem_license/";
+		$type = strrchr($_FILES['mem_license']['name'],".");
+		$newname1 =$numrand.$date2.$type;
+		$path_copy=$path.$newname1;
+		// $path_link="../mem_img/".$newname;
+		move_uploaded_file($_FILES['mem_license']['tmp_name'],$path_copy);  
+	}else{
+		$newname1=$mem_license2;
+	}
+
 	$sql = "UPDATE tbl_member SET 
 	ref_l_id='$ref_l_id',
 	
@@ -139,7 +172,8 @@ if ($member == "add") {
 	mem_status='$mem_status',
 	mem_username='$mem_username',
 	mem_password='$mem_password',
-	mem_img='$newname'
+	mem_img='$newname',
+	mem_license='$newname1'
 	WHERE mem_id=$mem_id" ;
 
 	$result = mysqli_query($condb, $sql) or die ("Error in query: $sql " . mysqli_error($condb). "<br>$sql");

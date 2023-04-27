@@ -132,7 +132,7 @@ if ($member == "add") {
 	$mem_username = mysqli_real_escape_string($condb,$_POST["mem_username"]);
 	$mem_password = mysqli_real_escape_string($condb,(sha1($_POST["mem_password"])));
 	$mem_img2 = mysqli_real_escape_string($condb,$_POST['mem_img2']);
-	$mem_license2 = mysqli_real_escape_string($condb,$_POST['mem_img2']);
+	$mem_license2 = mysqli_real_escape_string($condb,$_POST['mem_license2']);
 	$date1 = date("Ymd_His");
 	$numrand = (mt_rand());
 	$mem_img = (isset($_POST['mem_img']) ? $_POST['mem_img'] : '');
