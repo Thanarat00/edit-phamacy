@@ -122,7 +122,7 @@ function barcode($code){
                 <div class="col-md-12">
                 <form action="list_l.php"  method="GET" >
                   <div class="input-group">
-                     <input type="number" name="p_id" class="form-control" placeholder="สแกนบาร์โค้ด" id = "text2">
+                     <input type="number" name="p_id" class="form-control" id="barcode"  placeholder="สแกนบาร์โค้ด" >
                   </div>
                     </form>
                     <br>
@@ -233,7 +233,11 @@ function barcode($code){
     $(".datatable").DataTable();
 
   });
-
+  document.getElementById("barcode").addEventListener("input", function(event) {
+  var barcode = event.target.value;
+  // นำข้อมูลเข้า input
+  document.getElementById("barcode").value = barcode;
+});
 </script>
 
 
