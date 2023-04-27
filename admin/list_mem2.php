@@ -13,17 +13,26 @@ $rs_member = mysqli_query($condb, $query_member);
 ?>
 <script src="http://code.jquery.com/jquery-latest.js"></script>
       <script type="text/javascript">
-        function readURL(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-
-                reader.onload = function (e) {
-                    $('#blah').attr('src', e.target.result);
-                }
-
-                reader.readAsDataURL(input.files[0]);
-            }
+  function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#blah').attr('src', e.target.result);
+            };
+            reader.readAsDataURL(input.files[0]);
         }
+    }
+
+    function readURL2(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#blah2').attr('src', e.target.result);
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
 </script>
 
 
@@ -65,6 +74,7 @@ $rs_member = mysqli_query($condb, $query_member);
     <center>
     <th width="1%"><center>ลำดับ</center></th>
       <th width="10%"><center>รูปภาพ</center></th>
+      <th width="20%"><center>รูปภาพใบอนุญาต</center></th>
       <th width="40%"><center>ชื่อ</center></th>
       <th width="20%"><center>ระดับผู้ใช้งาน</center></th>
       <th width="20%"><center>แก้ไข</center></th>
@@ -78,7 +88,13 @@ $rs_member = mysqli_query($condb, $query_member);
     <tr>
      <td><?php echo @$l+=1; ?></td>
      <td><img src="../mem_img/<?php echo $row_member['mem_img']; ?>" width="100%"></td>
-
+     <td>
+      <center>
+    <a href="../mem_license/<?php echo $row_member['mem_license']; ?>" download="<?php echo $row_member['mem_license']; ?>">
+      <img src="../mem_license/<?php echo $row_member['mem_license']; ?>" width="50%">
+    </a>
+    </center>
+</td>
      <td><?php echo $row_member['mem_name']; ?></td>
 
      <td>
@@ -236,7 +252,6 @@ $rs_member = mysqli_query($condb, $query_member);
                     </div>
                   </div>
 
-
                   <div class="form-group row">
                     <label for="" class="col-sm-2 col-form-label">รูปภาพ</label>
                     <div class="col-sm-10">
@@ -244,22 +259,35 @@ $rs_member = mysqli_query($condb, $query_member);
                   
                   
             
-                  <br>
+          
 
 
-                  <div class="custom-file">
-                          <input type="file" class="custom-file-input" id="mem_img" name="mem_img" onchange="readURL(this);" >
-                          <label class="custom-file-label" for="file">อัพโหลดรูปภาพ</label>
-                        </div>
-                        <br><br>
+                      <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="mem_img" name="mem_img" onchange="readURL(this);">
+                        <label class="custom-file-label" for="file">อัพโหลดรูปภาพ</label>
+                    </div>
+                    <br><br>
+                    <img class="blah" id="blah" src="../upload.png" alt="your image" width="300" />
 
+                    </div>
+                  </div>
+                     
+                  <div class="form-group row">
+                    <label for="" class="col-sm-2 col-form-label">รูปภาพใบอนุญาติ</label>
+                    <div class="col-sm-10">
 
-                    <img id="blah" src="../upload.png" alt="your image" width="300" />
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="mem_img2" name="mem_license" onchange="readURL2(this);">
+                        <label class="custom-file-label" for="file">อัพโหลดรูปภาพ</label>
+                    </div>
+                    <br><br>
+                    <img class="blah" id="blah2" src="../upload.png" alt="your image" width="300" />
 
 
                     </div>
                   </div>
-                    
+                     
+                  <a href="#" onclick="downloadImage()"><img id="my-image" src="123png"></a>
                     
                   
             </div>
@@ -280,6 +308,40 @@ $rs_member = mysqli_query($condb, $query_member);
     $(".datatable").DataTable();
 
   });
+  $('[data-fancybox]').fancybox({
+//loop: false,
+loop: true,
+buttons: [
+"zoom",
+//"share",
+"slideShow",
+//"fullScreen",
+//"download",
+"thumbs",
+"close"
+],
+// Open/close animation type
+// Possible values:
+//   false            - disable
+//   "zoom"           - zoom images from/to thumbnail
+//   "fade"
+//   "zoom-in-out"
+//
+animationEffect: "zoom",
+// Transition effect between slides
+//
+// Possible values:
+//   false            - disable
+//   "fade'
+//   "slide'
+//   "circular'
+//   "tube'
+//   "zoom-in-out'
+//   "rotate'
+//
+
+});
+
 </script>
   
 </body>
