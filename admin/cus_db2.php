@@ -148,9 +148,6 @@ if ($cus == "add") {
         echo "window.location = 'cus_edit.php?c_id=$c_id&&mem_edit_error=mem_edit_error'; ";
         echo "</script>";
         }
-    
-
-
 
 
 

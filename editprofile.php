@@ -17,7 +17,20 @@ $row=mysqli_fetch_array($rs_member);
 
 ?>
 
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+      <script type="text/javascript">
+         function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#blah').attr('src', e.target.result);
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
 
+
+</script>
 
 
 
@@ -125,25 +138,23 @@ $row=mysqli_fetch_array($rs_member);
                     <div class="col-sm-10">
                      
                   
-                  
-            
-                  <br>
+          
 
 
                   <div class="custom-file">
-                          <input type="file" class="custom-file-input" id="c_img" name="c_img" onchange="readURL(this);" >
-                          <label class="custom-file-label" for="file">อัพโหลดรูปภาพ</label>
+
+                          <label for="formFile" class="form-label"></label>
+                        <input class="form-control" type="file"    id="c_img" name="c_img" >
                         </div>
                         <br><br>
 
 
-                    <img id="blah" src="#" alt="your image" width="300" />
 
 
                     </div>
                   </div>
 
-
+                  <br><br>
 
 
                   <button type="submit" class="btn btn-danger btn-block">Update</button>

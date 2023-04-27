@@ -11,3 +11,13 @@
 <script src="template/js/popper.min.js"></script>
 <script src="template/js/bootstrap.min.js"></script>
 
+<?php if(isset($_GET['mem_edit'])){ ?>
+<script>
+  Swal.fire({
+  title: 'สำเร็จ',
+  text: 'Edit Profile | <?php echo $row['mem_name'];?>',
+  icon: 'success',
+  confirmButtonText: 'ตกลง'
+})
+</script>
+<?php } ?>

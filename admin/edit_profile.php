@@ -118,7 +118,7 @@ $row=mysqli_fetch_array($rs_member);
 
                         <img src="../mem_img/<?php echo $row['mem_img'];?>" width="150px">
                         <input type="hidden" name="mem_img2" value="<?php echo $row['mem_img'];?>">
-                        <br><br>
+               
 
 
                    
@@ -139,20 +139,16 @@ $row=mysqli_fetch_array($rs_member);
 
 
                   <div class="custom-file">
-                          <input type="file" class="custom-file-input" id="mem_img" name="mem_img" onchange="readURL(this);" >
-                          <label class="custom-file-label" for="file">อัพโหลดรูปภาพ</label>
+                          <label for="formFile" class="form-label"></label>
+                        <input class="form-control" type="file" id="mem_img" name="mem_img">
                         </div>
-                        <br><br>
-
-
-                    <img id="blah" src="../upload.png"alt="your image" width="300" />
 
 
                     </div>
                   </div>
 
 
-
+                    <br>  <br> 
 
                   <button type="submit" class="btn btn-danger btn-block">Update</button>
 
