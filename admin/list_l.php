@@ -100,6 +100,23 @@ function barcode($code){
 
 }
 ?>
+      <script type="text/javascript">
+        $(document).ready(function() {
+     $('form').on('submit', function(event) {
+      event.preventDefault(); // ยกเลิกการส่งแบบฟอร์มเมื่อกดปุ่ม Enter
+      var p_id = $('#barcode').val(); // รับค่าจาก input
+      $.ajax({
+         url: 'list_l.php',
+         type: 'GET',
+         data: {p_id: p_id},
+         success: function(response) {
+            // ดำเนินการต่อไปตามที่คุณต้องการ
+         }
+      });
+   });
+});
+</script>
+
  <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
@@ -233,11 +250,7 @@ function barcode($code){
     $(".datatable").DataTable();
 
   });
-  document.getElementById("barcode").addEventListener("input", function(event) {
-  var barcode = event.target.value;
-  // นำข้อมูลเข้า input
-  document.getElementById("barcode").value = barcode;
-});
+
 </script>
 
 
