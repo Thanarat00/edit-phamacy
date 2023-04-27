@@ -73,11 +73,9 @@ $row=mysqli_fetch_array($rs_member);
                     <label for="" class="col-sm-2 col-form-label">ระดับการใช้งาน </label>
                     <div class="col-sm-10">
                       <select class="form-control select2" name="ref_l_id" id="ref_l_id" required>
-                        <option value="<?php echo $row['ref_l_id'];?>">-- <?php if ($row['ref_l_id']==1) {
-                          echo "ผู้ดูแลระบบ(Admin)";
-                        }elseif($row['ref_l_id']==2){
-                          echo "เภสัช";
-                        }else{
+                        <option value="<?php echo $row['ref_l_id'];?>">-- <?php if ($row['ref_l_id']==2) {
+                                echo "เภสัช";
+                        }elseif($row['ref_l_id']==3){
                           echo "เจ้าของกิจการ";
                         } ?> --</option>
 
@@ -85,7 +83,6 @@ $row=mysqli_fetch_array($rs_member);
 
                           <option value="">-- เลือกประเภท --</option>
                          
-                          <option value="1">ผู้ดูแลระบบ(Admin)</option>
                           <option value="2">เภสัช</option>
                           <option value="3">เจ้าของกิจการ</option>
                           

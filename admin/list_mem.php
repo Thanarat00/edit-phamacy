@@ -5,7 +5,7 @@ $menu = "member"
 <?php include("header.php"); ?>
 
 <?php 
-$query_member = "SELECT * FROM tbl_member" or die
+$query_member = "SELECT * FROM tbl_member   WHERE  ref_l_id >= 2 " or die
 ("Error : ".mysqlierror($query_member));
 $rs_member = mysqli_query($condb, $query_member);
 //echo ($query_level);//test query
@@ -99,12 +99,10 @@ $rs_member = mysqli_query($condb, $query_member);
 
      <td>
        
-      <?php if ($row_member['ref_l_id']==1) {
-      echo "ผู้ดูแลระบบ(Admin)";
-      }elseif($row_member['ref_l_id']==2){
+      <?php if ($row_member['ref_l_id']==2) {
       echo "เภสัช";
-      }else{
-      echo "เจ้าของกิจการ";
+      }elseif($row_member['ref_l_id']==3){
+        echo "เจ้าของกิจการ";
       } ?>
      </td>
      <td>
@@ -228,8 +226,7 @@ $rs_member = mysqli_query($condb, $query_member);
                     <div class="col-sm-10">
                       <select class="form-control select" name="ref_l_id" id="ref_l_id"  required >
                           <option value="">-- เลือกประเภท --</option>
-                         
-                          <option value="1">ผู้ดูแลระบบ(Admin)</option>
+                      
                           <option value="2">เภสัช</option>
                           <option value="3">เจ้าของกิจการ</option>
                           
