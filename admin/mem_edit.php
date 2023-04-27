@@ -143,12 +143,10 @@ $row=mysqli_fetch_array($rs_member);
                      
                   
                   
-            
-                  <br>
 
-                        <img src="../mem_img/<?php echo $row['mem_img'];?>" width="150px">
+                        <img src="../mem_img/<?php echo $row['mem_img'];?>" width="100px">
                         <input type="hidden" name="mem_img2" value="<?php echo $row['mem_img'];?>">
-                        <br><br>
+                    
 
 
                    
@@ -165,45 +163,34 @@ $row=mysqli_fetch_array($rs_member);
                   
                   
             
-                  <br>
-
-
-                  <div class="custom-file">
-                          <input type="file" class="custom-file-input" id="mem_img" name="mem_img" onchange="readURL(this);" >
-                          <label class="custom-file-label" for="file">อัพโหลดรูปภาพ</label>
-                        </div>
-                        <br><br>
-
-
-                    <img id="blah" src="../upload.png" alt="your image" width="300" />
-
-
+             
+                  <div class="mb-3">
+                        <label for="formFile" class="form-label"></label>
+                        <input class="form-control" type="file"  id="mem_img2" name="mem_img">
+                      </div>
                     </div>
                   </div>
+
+
+           
                   <div class="form-group row">
                     <label for="" class="col-sm-2 col-form-label">รูปภาพใบอนุญาติ</label>
                     <div class="col-sm-10">
-                    <br>
+             
 
                       <img src="../mem_license/<?php echo $row['mem_license'];?>" width="150px">
                       <input type="hidden" name="mem_license2" value="<?php echo $row['mem_license'];?>">
-                      <br><br>
-
+               
 -
 
-
-                    <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="mem_img2" name="mem_license" onchange="readURL2(this);">
-                        <label class="custom-file-label" for="file">อัพโหลดรูปภาพ</label>
-                    </div>
-                    <br><br>
-                    <img class="blah" id="blah2" src="../upload.png" alt="your image" width="300" />
-
-
+                    <div class="mb-3">
+                        <label for="formFile" class="form-label"></label>
+                        <input class="form-control" type="file"  id="mem_img2" name="mem_license">
+                      </div>
                     </div>
                   </div>
 
-
+                  <br>  <br>  
 
 
                   <button type="submit" class="btn btn-danger btn-block">Update</button>

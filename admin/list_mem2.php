@@ -267,7 +267,7 @@ $rs_member = mysqli_query($condb, $query_member);
                         <label class="custom-file-label" for="file">อัพโหลดรูปภาพ</label>
                     </div>
                     <br><br>
-                    <img class="blah" id="blah" src="../upload.png" alt="your image" width="300" />
+                    <img class="blah" id="blah" src="../upload.png" alt="your image" width="100" />
 
                     </div>
                   </div>
@@ -281,7 +281,7 @@ $rs_member = mysqli_query($condb, $query_member);
                         <label class="custom-file-label" for="file">อัพโหลดรูปภาพ</label>
                     </div>
                     <br><br>
-                    <img class="blah" id="blah2" src="../upload.png" alt="your image" width="300" />
+                    <img class="blah" id="blah2" src="../upload.png" alt="your image" width="100" />
 
 
                     </div>

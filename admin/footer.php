@@ -230,7 +230,7 @@
 
 
 
-<?php if(isset($_GET['mem_editp'])){ ?>
+<?php if(isset($_GET['mem_edit'])){ ?>
 <script>
   Swal.fire({
   title: 'สำเร็จ',

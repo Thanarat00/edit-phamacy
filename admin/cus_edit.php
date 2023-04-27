@@ -38,7 +38,6 @@ $row=mysqli_fetch_array($rs_member);
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
-        <h1>Customer</h1>
       </div><!-- /.container-fluid -->
     </section>
 
@@ -106,7 +105,7 @@ $row=mysqli_fetch_array($rs_member);
 
 
                   <div class="form-group row">
-                    <label for="" class="col-sm-2 col-form-label">Tel </label>
+                    <label for="" class="col-sm-2 col-form-label">เบอร์โทรศัพท์</label>
                     <div class="col-sm-10">
                       <input type="text" name="c_phone" class="form-control" id="c_phone" placeholder="" value="<?php echo $row['c_phone'];?>">
                     </div>
@@ -136,52 +135,43 @@ $row=mysqli_fetch_array($rs_member);
 
 
                   <div class="form-group row">
-                    <label for="" class="col-sm-2 col-form-label">img</label>
+                    <label for="" class="col-sm-2 col-form-label">รูปภาพ</label>
                     <div class="col-sm-10">
                      
                   
                   
             
-                  ภาพเก่า<br>
+   
 
                         <img src="../c_img/<?php echo $row['c_img'];?>" width="150px">
                         <input type="hidden" name="c_img2" value="<?php echo $row['c_img'];?>">
-                        <br><br>
+                 
 
 
                    
 
-                    </div>
-                  </div>
+              
 
 
-
-                  <div class="form-group row">
-                    <label for="" class="col-sm-2 col-form-label">img</label>
-                    <div class="col-sm-10">
                      
                   
                   
-            
-                  เลือกไฟล์ใหม่<br>
 
 
                   <div class="custom-file">
-                          <input type="file" class="custom-file-input" id="c_img" name="c_img" onchange="readURL(this);" >
-                          <label class="custom-file-label" for="file">Choose file</label>
+                        <label for="formFile" class="form-label"></label>
+                        <input class="form-control" type="file"  id="c_img" name="c_img">
                         </div>
-                        <br><br>
 
-
-                    <img id="blah" src="../upload.png" alt="your image" width="300" />
 
 
                     </div>
                   </div>
 
+     
 
 
-
+                  <br>  <br>  
                   <button type="submit" class="btn btn-danger btn-block">Update</button>
 
 

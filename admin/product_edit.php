@@ -252,12 +252,11 @@ $rs_supplier = mysqli_query($condb, $query_supplier);
                      
                   
                   
-            
-                  ภาพเก่า<br>
+      
 
                         <img src="../p_img/<?php echo $row['p_img'];?>" width="150px">
                         <input type="hidden" name="mem_img2" value="<?php echo $row['p_img'];?>">
-                        <br><br>
+              
 
 
                    
@@ -273,24 +272,22 @@ $rs_supplier = mysqli_query($condb, $query_supplier);
                      
                   
                   
-            
-                 
-
 
                   <div class="custom-file">
-                          <input type="file" class="custom-file-input" id="p_img" name="p_img" onchange="readURL(this);" >
-                          <label class="custom-file-label" for="file">อัพโหลดรูปภาพ</label>
+
+                          <label for="formFile" class="form-label"></label>
+                        <input class="form-control" type="file"   id="p_img" name="p_img">
+                          
                         </div>
-                        <br><br>
+                
 
-
-                    <img id="blah" src="../upload.png" alt="your image" width="300" />
+ 
 
 
                     </div>
                   </div>
 
-
+                  <br><br>
 
 
                   <button type="submit" class="btn btn-danger btn-block">Update</button>
