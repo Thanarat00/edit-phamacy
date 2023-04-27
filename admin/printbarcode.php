@@ -1,153 +1,78 @@
 <?php
-	require_once __DIR__ . '../../vendor/autoload.php';
-     include('../condb.php');
+require_once __DIR__ . '../../vendor/autoload.php';
+include('../condb.php');
 
-	
 $tableh = '
-    <style>
-        body{
-            font-family: "freemono"; //คือ TH salaban แปลงชื่อเนื่องจาก function เดิม ดักการเพิ่มของไฟล์ font ซึ่งแก้แล้วไม่ได้
-        }
-    </style>
-
-    <table id="bg-table" width="100%" style="border-collapse: collapse;font-size:12pt;margin-top:8px;">
-
-    </thead>
-        <tbody>';
-    $sql = "SELECT * FROM tbl_product";
-    $result = mysqli_query($condb, $sql);
-    $content = "";
-        while($row = mysqli_fetch_assoc($result)) {
-            $tablebody .= '
-                <barcode code="'.$row['p_id'].'" type="C128A" class="barcode" />
-
-
-
-           ';
-         
-        }
-    
-    
-mysqli_close($conn);
-
-
-$tableend = "</tbody>
-</table>";
-
-
-$body_1='
-    <style>
-        body{
-
-            //font-family: "garuda";
-
-              font-family: "freemono"; //คือ TH salaban แปลงชื่อเนื่องจาก function เดิม ดักการเพิ่มของไฟล์ font ซึ่งแก้แล้วไม่ได้
-
-
-              /* http://fordev22.com */
-            /* https://www.facebook.com/fordev22/ */
-
-            
-        }
-    </style>';
-$fordev22 ='
 <style>
-     
-
-div{
-       
+    body{
+        font-family: "freemono";
     }
-table {
-  
-   
-  border-collapse: collapse;
-  width: 100%;
-}
-
-td, th {
-    font-size: 18px;
-  border: 1px solid #AED6F1;
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-  background-color: #AED6F1;
-}
+    .product {
+        margin-bottom: 10px;
+        width: 20%;
+        display: inline-block;
+    }
+    .product-name {
+        text-align: center;
+        font-size: 12px;
+        font-weight: bold;
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+    .product-price {
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
 
 </style>
-
-
-<img width="250"  src="logo_fordev22_2.png" style="vertical-align: middle;
-  width: 250px;">
-<h1>Php mPdf (Print Pdf) By fordev22.com</h1>
-<div class="alert alert-info">
-    <strong> mPdf</strong>
-    ภาษา ไทย และ Eng</div>
-<p></p>
-<div class="table-responsive">
-<table>
-    <thead>
-    <tr>
-        <th><b>Website</b> </th>
-        <th>Name</th>
-        <th>Address</th>
-    </tr>
-    </thead>
-    <tbody>
-    
-    <tr>
-        <td>fordev22.com</td>
-        <td>Mr.fordev22</td>
-        <td>ไทย
-        </td>
-    </tr>
-
-    <tr>
-        <td>fordev22.com</td>
-        <td>Mr.fordev22</td>
-        <td>Japan
-        </td>
-    </tr>
-
-    <tr>
-        <td>fordev22.com</td>
-        <td>Mr.fordev22</td>
-        <td>China
-        </td>
-    </tr>
-
-    <tr>
-        <td>fordev22.com</td>
-        <td>Mr.fordev22</td>
-        <td>Brasil
-        </td>
-    </tr>
-    </tbody>
-
-
-   
-</table>
-<div><h3>Develop By fordev22</h3></div>
-</div>
-
 ';
-    
+
+$tablebody = '<div class="row">';
+$sql = "SELECT * FROM tbl_product";
+$result = mysqli_query($condb, $sql);
+
+$counter = 1; // เพิ่มตัวแปร counter เพื่อนับจำนวนสินค้าที่แสดง
+
+if (mysqli_num_rows($result) > 0) {
+    while($row = mysqli_fetch_assoc($result)) {
+        if($counter % 3 == 1) { // ถ้าเป็นสินค้าแถวแรกของแถวใหม่ให้เริ่ม div ใหม่
+            $tablebody .= '<div class="row">';
+        }
+        
+        $tablebody .= '   <div class="col-md-4">
+                            <div class="product">
+                                <div class="product-name">'.$row['p_name'].'</div>
+                                <barcode code="'.$row['p_id'].'" type="C128A" class="barcode" />
+                                <div class="product-price">ราคา: '.$row['p_price'].'</div>
+                            </div>
+                        </div>';
+
+        if($counter % 3 == 0) { // ถ้าเป็นสินค้าแถวสุดท้ายของแถวใหม่ให้ปิด div
+            $tablebody .= '</div>';
+        }
+
+        $counter++; // เพิ่ม counter ต่อไป
+    }
+
+    // กรณีที่ไม่เต็ม 9 สินค้า ให้เติม div เพิ่มเติมเพื่อจบแถว
+    if($counter % 9 != 1) {
+        $tablebody .= '</div>';
+    }
+}
+
+mysqli_close($conn);
+
+$tablebody .= '</div>';
+
+$tableend = '</tbody>';
+
 $mpdf = new mPDF();
 
-
-    
-
-
 $mpdf->WriteHTML($tableh);
-
 $mpdf->WriteHTML($tablebody);
-
 $mpdf->WriteHTML($tableend);
-//$mpdf->WriteHTML($body_1);
-//$mpdf->WriteHTML($fordev22);
+
 $mpdf->Output();
-/* http://fordev22.com */
-/* https://www.facebook.com/fordev22/ */
-//https://monkeywebstudio.com/%E0%B8%AA%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%87%E0%B9%84%E0%B8%9F%E0%B8%A5%E0%B9%8C-pdf-%E0%B8%94%E0%B9%89%E0%B8%A7%E0%B8%A2-mpdf/
 ?>
