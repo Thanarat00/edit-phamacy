@@ -24,8 +24,6 @@ $rs_my_order = mysqli_query($condb, $query_my_order);
     <tr class="danger">
       <th width="7%"><center>ลำดับ</center></th>
       <th width="30%"><center>รายละเอียด</center></th>
-      <th width="10%"><center>สถานะ</center></th>
-      
       <th width="10%"><center>วันที่</center></th>
       <th width="10%"><center>จัดการ</center></th>
       
@@ -40,7 +38,7 @@ $rs_my_order = mysqli_query($condb, $query_my_order);
      <td><?php echo $rs_order['order_id']; ?></td>
      <td>
       ชื่อ ผู้ทำรายการขาย : <?php echo $rs_order['mem_name']; ?> <br>
-      ชื่อผู้ซื้อสินค้า : <?php echo $rs_order['c_name']; ?> <hr>
+      ชื่อ ผู้ซื้อสินค้า : <?php echo $rs_order['c_name']; ?> <hr>
       <?php
         $order_id = $rs_order['order_id'];
         $query_pp = "SELECT * FROM tbl_order_detail AS d
@@ -54,7 +52,7 @@ $rs_my_order = mysqli_query($condb, $query_my_order);
       ?>
       รายละเอียด <br>
       <?php foreach ($rs_pp as $rs_pro) {?>
-       <?php echo $num+=1;?> ) ชื่อสินค้า : <?php echo $rs_pro['p_name'];?> (ข.ย. <?php echo $rs_pro['p_license'];?>) | จำนวน : <?php echo $rs_pro['p_c_qty'];?> | ราคาต่อชิ้น : <?php echo $rs_pro['p_price'];?> | ราคารวม : <?php echo $rs_pro['total'];?>  บาท <br>
+      ชื่อสินค้า : <?php echo $rs_pro['p_name'];?> (ข.ย. <?php echo $rs_pro['p_license'];?>) | จำนวน : <?php echo $rs_pro['p_c_qty'];?> | ราคาต่อชิ้น : <?php echo $rs_pro['p_price'];?> | ราคารวม : <?php echo $rs_pro['total'];?>  บาท <br>
       <?php }?>
       <hr>
         <p align="right">ยอดที่ต้องชำระรวม = <?php echo $rs_order['pay_amount'];?> บาท <br>
@@ -64,14 +62,6 @@ $rs_my_order = mysqli_query($condb, $query_my_order);
         </p>
      </td>
 
-     <td>
-
-      <?php $st= $rs_order['order_status']; 
-            include('mystatus.php');
-      ?>
-       
-
-     </td>
      
      <td><?php echo substr($rs_order['order_date'],8,2)." ". $thaimonth[substr($rs_order['order_date'],5,2)-1]." ".substr(substr($rs_order['order_date'],0,4)+543,0,4)." ".date('H:i:s',strtotime($rs_order['order_date'])); ?></td>
      <td>
