@@ -101,21 +101,15 @@ function barcode($code){
 }
 ?>
       <script type="text/javascript">
-        $(document).ready(function() {
-     $('form').on('submit', function(event) {
-      event.preventDefault(); // ยกเลิกการส่งแบบฟอร์มเมื่อกดปุ่ม Enter
-      var p_id = $('#barcode').val(); // รับค่าจาก input
-      $.ajax({
-         url: 'list_l.php',
-         type: 'GET',
-         data: {p_id: p_id},
-         success: function(response) {
-            // ดำเนินการต่อไปตามที่คุณต้องการ
-         }
-      });
-   });
-});
-</script>
+         // สร้างตัวแปรสำหรับจัดการกับฟอร์ม
+    const barcodeForm = document.getElementById('barcode-form');
+    const barcodeInput = document.getElementById('barcode');
+
+    // เมื่อมีการสแกนบาร์โค้ด จะส่งข้อมูลไปยังเซิร์ฟเวอร์โดยตรง
+    barcodeInput.addEventListener('change', () => {
+        barcodeForm.submit();
+    });
+    </script>
 
  <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -137,11 +131,11 @@ function barcode($code){
               <div class="card-body">
 
                 <div class="col-md-12">
-                <form action="list_l.php"  method="GET" >
+                <form id="barcode-form" action="list_l.php" method="GET">
                   <div class="input-group">
-                     <input type="number" name="p_id" class="form-control" id="barcode"  placeholder="สแกนบาร์โค้ด" >
+                      <input type="number" name="p_id" class="form-control" id="barcode" placeholder="สแกนบาร์โค้ด">
                   </div>
-                    </form>
+                      </form>
                     <br>
              
                   <div class="row">

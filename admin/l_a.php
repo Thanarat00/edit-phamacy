@@ -125,7 +125,16 @@ function barcode($code){
 
 }
 ?>
+      <script type="text/javascript">
+         // สร้างตัวแปรสำหรับจัดการกับฟอร์ม
+    const barcodeForm = document.getElementById('barcode-form');
+    const barcodeInput = document.getElementById('barcode');
 
+    // เมื่อมีการสแกนบาร์โค้ด จะส่งข้อมูลไปยังเซิร์ฟเวอร์โดยตรง
+    barcodeInput.addEventListener('change', () => {
+        barcodeForm.submit();
+    });
+    </script>
 
 <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -147,9 +156,9 @@ function barcode($code){
               <div class="card-body">
 
                 <div class="col-md-12">
-                <form action="l_a.php"  method="GET" >
+                <form action="l_a.php"  method="GET" id="barcode-form">
                  <div class="input-group">
-                     <input type="number" name="p_id" class="form-control" placeholder="สแกนบาร์โค้ด" id = "">
+                     <input type="number" name="p_id" class="form-control" placeholder="สแกนบาร์โค้ด" id = "barcode">
                      <input type="hidden" name="t_id" value="<?php echo $t_id;?>">
                      <input type="hidden" name="b_id" value="<?php echo $b_id;?>">
                   </div>

@@ -55,7 +55,7 @@ $menu = "sale";
   <table border="0" align="center" class="table table-hover table-bordered table-striped">
     
     <tr>
-      <td width="5%" align="center">ลำดับสินค้า</td>
+      <td width="10%" align="center">ลำดับสินค้า</td>
       <td width="10%" align="center">รูปภาพ</td>
       <td width="40%" align="center">สินค้า</td>
       <td width="10%" align="center">ราคา</td>
