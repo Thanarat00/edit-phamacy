@@ -53,7 +53,7 @@ session_start();
                                     if($_SESSION["mem_status"] =="1"){
                                       echo "<script>";
                                       echo "alert(\" เข้าสู่ระบบสำเร็จ\");"; 
-                                      echo "window.location=\"admin/\""; 
+                                      echo "window.location=\"admin/list_mem.php\""; 
                                       echo "</script>";
                                   
                                       }

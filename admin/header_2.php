@@ -1,5 +1,5 @@
 <!-- http://fordev22.com/ -->
-<?php include ("head_2.php"); ?>
+<?php include ("head.php"); ?>
 
 <!-- <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed text-sm sidebar-collapse"> -->
 
@@ -9,7 +9,7 @@
   
   
   <?php include ("navbar_2.php"); ?>
-  <?php include ("sidebar_2.php"); ?>
+  <?php include ("sidebar.php"); ?>
 
   
 

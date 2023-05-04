@@ -64,94 +64,7 @@ $rs_t= mysqli_query($condb, $query_t);
         <ul class="nav nav-pills nav-sidebar nav-child-indent flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-header">เมนูสำหรับการขาย</li>
-
-          <li class="nav-item">
-            <a href="index.php" class="nav-link <?php if($menu=="index"){echo "active";} ?> ">
-              <i class="nav-icon fas fa-clipboard-list"></i>
-              <p>รายการขาย </p>
-            </a>
-          </li>
-
-
-          <li class="nav-item">
-            <a href="list_l.php" class="nav-link <?php if($menu=="sale"){echo "active";} ?> ">
-              <i class="nav-icon fa fa-shopping-cart "></i>
-              <p>ขายสินค้า </p>
-            </a>
-          </li>
-
-
-
-
-          <li class="nav-header" <?php if($menu=="sale_type"){echo "active";} ?>> ขายแยกประเภท</li>
-
-
-           
-
-
-            <ul  >
-              <?php foreach ($rs_t as $rs_t ) {
-                                 $t_id = $rs_t['t_id'];
-                                $query_p = "SELECT * FROM tbl_product
-                                            INNER JOIN tbl_brand ON tbl_product.b_id = tbl_brand.b_id
-
-                                            -- LEFT JOIN tbl_type ON tbl_product.t_id = tbl_type.t_id
-                                             WHERE t_id = $t_id
-                                             GROUP BY tbl_brand.b_id
-                                            ";
-
-                                $rs_p= mysqli_query($condb, $query_p);
-                                $rs_p_rows = mysqli_num_rows($rs_p);
-                                //echo $rs_p_rows;
-
-                            ?>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="fas fa-th-list"></i>
-                  <p>
-                    <?php echo $rs_t['t_name']; ?>
-                    <i class="fas fa-angle-left right"></i>
-                  </p>
-                </a>
-                <?php if ($rs_p_rows>0){?>
-                <ul class="nav nav-treeview" style="display: none;">
-                  <?php foreach ($rs_p as $rs_p ) {?>
-                  <li class="nav-item">
-                    <a href="l_a.php?t_id=<?php echo $rs_t['t_id']; ?>&b_id=<?php echo $rs_p['b_id']; ?>" class="nav-link">
-                      <i class="fas fa-box-open"></i>
-                      <p><?php echo $rs_p['b_name']; ?></p>
-                    </a>
-                  </li> 
-                  <?php }?>
-                </ul>
-                <?php }?>
-              </li>
-              <?php }?>
-            </ul>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        </ul>
-
-
-
-
-
-        <hr>
-
-
+          
 
 
         <ul class="nav nav-pills nav-sidebar nav-child-indent flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -174,85 +87,13 @@ $rs_t= mysqli_query($condb, $query_t);
           </li>
 
 
-          <li class="nav-item">
-            <a href="list_type.php" class="nav-link <?php if($menu=="type"){echo "active";} ?> ">
-              <i class="nav-icon fa fa-copy"></i>
-              <p>ประเภทสินค้า </p>
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a href="list_brand.php" class="nav-link <?php if($menu=="category"){echo "active";} ?> ">
-              <i class="nav-icon fa fa-box"></i>
-              <p>หมวดหมู่ </p>
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a href="list_product.php" class="nav-link <?php if($menu=="product"){echo "active";} ?> ">
-              <i class="nav-icon fa fa-box-open"></i>
-              <p>คลังสินค้า </p>
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a href="list_supplier.php" class="nav-link <?php if($menu=="supplier"){echo "active";} ?> ">
-              <i class="nav-icon fa fa-box-open"></i>
-              <p>ผู้ผลิต </p>
-            </a>
-          </li>
 
 
         </ul>
-        <hr>
-        <ul class="nav nav-pills nav-sidebar nav-child-indent flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-          <li class="nav-header">Dashboard</li>
-
-
-
-          <li class="nav-item">
-            <a href="report_d.php" class="nav-link <?php if($menu=="report_d"){echo "active";} ?> ">
-              <i class="nav-icon fas fa-chart-line text-white"></i>
-              <p>ยอดขายรายวัน</p>
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a href="report_m.php" class="nav-link <?php if($menu=="report_m"){echo "active";} ?> ">
-              <i class="nav-icon fas fa-chart-line text-warning"></i>
-              <p>ยอดขายรายสัปดาห์</p>
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a href="report_y.php" class="nav-link <?php if($menu=="report_y"){echo "active";} ?> ">
-              <i class="nav-icon fas fa-chart-line text-success"></i>
-              <p>ยอดขายรายเดือน</p>
-            </a>
-          </li>
-
-
-          <li class="nav-item">
-            <a href="report_p5.php" class="nav-link <?php if($menu=="report_p5"){echo "active";} ?> ">
-              <i class="nav-icon fas fa-crown text-fuchsia"></i>
-              <p>5 อันดับสินค้าขายดี</p>
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a href="report_p5_t.php" class="nav-link <?php if($menu=="report_p5_t"){echo "active";} ?> ">
-              <i class="nav-icon fas fa-crown text-purple"></i>
-              <p>5 อันดับประเภทสินค้าขายดี</p>
-            </a>
-          </li>
-
-
-
+       
          
 
-      
+    
          
 
           <li class="nav-header"></li>
@@ -381,7 +222,11 @@ $rs_t= mysqli_query($condb, $query_t);
               <p>ผู้ผลิต </p>
             </a>
           </li>
-
+          <li class="nav-item">
+             <a target="_bank" class="nav-link"  href="printbarcode.php">
+              <i class="nav-icon fas fa-qrcode"></i>
+              <p> บาร์โค้ด</p></a>
+         </li>
         </ul>
           <hr>
         <ul class="nav nav-pills nav-sidebar nav-child-indent flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -613,7 +458,11 @@ $rs_t= mysqli_query($condb, $query_t);
               <p>ผู้ผลิต </p>
             </a>
           </li>
-
+          <li class="nav-item">
+             <a target="_bank" class="nav-link"  href="printbarcode.php">
+              <i class="nav-icon fas fa-qrcode"></i>
+              <p> บาร์โค้ด</p></a>
+         </li>
 
         </ul>
         <hr>
