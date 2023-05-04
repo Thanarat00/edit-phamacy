@@ -20,15 +20,15 @@ $date_e = $_POST['date_e']." 23:59:59";
 //exit();
  
 $query_my_order = "SELECT 
-order_id, DATE_FORMAT(order_date, '%d-%M-%Y') AS datesave,
+order_id,DAY(order_date),order_date AS datesave,
 SUM(pay_amount) AS ptotal
 FROM tbl_order 
 WHERE order_status =4
 AND 
 order_date BETWEEN '$date_s' AND '$date_e'
 
-GROUP BY DATE_FORMAT(order_date, '%d-%M-%Y') DESC
-ORDER BY DATE_FORMAT(order_date, '%d-%M-%Y') DESC
+GROUP BY DAY(order_date) DESC
+ORDER BY DAY(order_date) DESC
 
 " 
 or die
@@ -45,7 +45,6 @@ $rs_my_order = mysqli_query($condb, $query_my_order);
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
-        <h1>Dashboard</h1>
       </div><!-- /.container-fluid -->
     </section>
 
@@ -56,7 +55,7 @@ $rs_my_order = mysqli_query($condb, $query_my_order);
 
     <div class="card card-gray">
             <div class="card-header ">
-              <h3 class="card-title">Report Day</h3>
+            <h3 class="card-title">ยอดขายรายวัน</h3>
                 <div align="right">
 
                     
@@ -106,7 +105,7 @@ $rs_my_order = mysqli_query($condb, $query_my_order);
                                       echo"<tr>";
 
 
-                                          echo "<td>".$rs_order['datesave']."</td>";
+                                      echo "<td>".substr($rs_order['datesave'],8,2)." ". $thaimonth[substr($rs_order['datesave'],5,2)-1]." ".substr(substr($rs_order['datesave'],0,4)+543,0,4)." "."</td>";
                                           echo "<td>".$rs_order['ptotal']."</td>";
                                           
                                           

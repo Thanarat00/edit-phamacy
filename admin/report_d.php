@@ -7,13 +7,13 @@ $menu = "report_d"
 <?php 
  
 $query_my_order = "SELECT 
-order_id, (order_date) AS datesave,
+order_id, DAY(order_date),order_date AS datesave,
 SUM(pay_amount) AS ptotal
 FROM tbl_order 
 WHERE order_status =4
 
-GROUP BY  (order_date) DESC
-ORDER BY  (order_date) DESC
+GROUP BY  DAY(order_date) DESC
+ORDER BY  DAY(order_date) DESC
 
 " 
 or die
