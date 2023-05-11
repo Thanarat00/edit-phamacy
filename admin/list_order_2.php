@@ -22,9 +22,8 @@ $rs_my_order = mysqli_query($condb, $query_my_order);
 <table id="example1" class="table table-bordered  table-hover table-striped">
   <thead>
   <tr class="danger">
-      <th width="1%"><center>ลำดับ</center></th>
+      <th width="7%"><center>ลำดับ</center></th>
       <th width="30%"><center>รายละเอียด</center></th>
-      <th width="10%"><center>สถานะ<center></th>
       
       <th width="10%"><center>วันที่</center></th>
       <th width="10%"><center>จัดการ</center></th>
@@ -64,14 +63,7 @@ $rs_my_order = mysqli_query($condb, $query_my_order);
         </p>
      </td>
 
-     <td>
 
-      <?php $st= $rs_order['order_status']; 
-            include('mystatus.php');
-      ?>
-       
-
-     </td>
      
      <td><?php echo substr($rs_order['order_date'],8,2)." ". $thaimonth[substr($rs_order['order_date'],5,2)-1]." ".substr(substr($rs_order['order_date'],0,4)+543,0,4)." ".date('H:i:s',strtotime($rs_order['order_date'])); ?></td>
      <td>
