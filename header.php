@@ -26,6 +26,7 @@ $row_cus=mysqli_fetch_array($rs_cus);
 
 $c_name=$row_cus['c_name'];
 $c_surname=$row_cus['c_surname'];
+$c_img=$row_cus['c_img'];
 }
 //($row_member);
 }
@@ -66,6 +67,12 @@ $c_surname=$row_cus['c_surname'];
       
       /*font-size: 14px;*/
     }
+    .avatar {
+        vertical-align: middle;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+}
 </style>
     <body>
 

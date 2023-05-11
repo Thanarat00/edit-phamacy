@@ -214,7 +214,8 @@ $rs_t= mysqli_query($condb, $query_t);
                 <ul class="navbar-nav">
                   <li class="nav-item dropdown">
                     <button class="btn btn-dark dropdown-toggle dropdown-header text-light" data-bs-toggle="dropdown" aria-expanded="false">
-                     <?php echo $c_name." &nbsp;     ".$c_surname; ?> 
+                    <img src="c_img/<?php echo $c_img; ?>" class="avatar" >
+                     <span><?php echo $c_name." &nbsp;     ".$c_surname; ?> </span>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-dark">
                       <li><a class="dropdown-item  dropdown-header " href="user2.php">ประวัติ</a></li>
